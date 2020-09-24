@@ -1,0 +1,62 @@
+<nav class="sp-navbar">
+    <ul class="sp-navbar-links">
+        <li>
+            <a title="Home" [routerLink]="['']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:false}">
+                <span>Home</span>
+            </a>
+        </li>
+        <li>
+            <a title="Employees" [routerLink]="['employee']" class="sp-navbar-link" routerLinkActive="active">
+                <!-- <i class="material-icons">calendar_today</i> -->
+                <span>Employees</span>
+            </a>
+            <ul>
+                <li><a title="List" [routerLink]="['employee/list']">List</a></li>
+                <li><a title="Edit" [routerLink]="['employee/edit']">Edit</a></li>
+                <li><a title="New" [routerLink]="['employee/new']">New</a></li>
+                <li><a title="Import" [routerLink]="['employee/import']">Import</a></li>
+            </ul>
+        </li>
+        <li>
+            <a title="Transactions" [routerLink]="['transaction']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <span>Transactions</span>
+            </a>
+            <ul>
+                <li><a title="Loans" [routerLink]="['transaction/loan']">Loans</a></li>
+                <li><a title="Payments" [routerLink]="['transaction/loan']">Payments</a></li>
+                <li><a title="Bank" [routerLink]="['transaction/loan']">Bank</a></li>
+            </ul>
+        </li>
+        <li>
+            <a title="Reports" [routerLink]="['report']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <span>Reports</span>
+                <!-- <i class="material-icons btn-icon">cached</i> -->
+            </a>
+            <ul>
+                <li><a title="Search" [routerLink]="['report/finstat']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Book of Accounts</a></li>
+                <li><a title="Search" [routerLink]="['report/finstat']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Financial Statement</a></li>
+                <li><a title="Search" [routerLink]="['report/balancesheet']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">General Ledger</a></li>
+                <li><a title="Search" [routerLink]="['report/balancesheet']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Financial Condition</a></li>
+                <li><a title="Search" [routerLink]="['report/trialbalance']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Statement of Activities</a></li>
+                <li><a title="Search" [routerLink]="['report/trialbalance']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Statement of Cash Flows</a></li>
+                <li><a title="Search" [routerLink]="['report/trialbalance']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Statement of Changes in Equity</a></li>
+                <li><a title="Search" [routerLink]="['report/trialbalance']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Cash Position</a></li>
+                <li><a title="Search" [routerLink]="['report/trialbalance']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Petty Cash Voucher</a></li>
+            </ul>
+        </li>
+        <li>
+            <a title="Setup" [routerLink]="['setup']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <!-- <i class="material-icons btn-icon">settings</i> -->
+                <span>Setup</span>
+            </a>
+            <ul>
+                <li><a title="Accounts" href="#">Chart of Accounts</a></li>
+                <li><a title="Accounts" href="#">Locations</a></li>
+                <li><a title="Accounts" href="#">Departments</a></li>
+                <li><a title="Accounts" href="#">Users</a></li>
+            </ul>
+        </li>
+    </ul>
+    <!-- <ul class="sp-navbar-links">
+    </ul> -->
+</nav>

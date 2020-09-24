@@ -1,0 +1,19 @@
+<div class="sp-field-wrapper">
+    <div class="sp-field-content">
+        <input #input
+            class="sp-field-text {{className}}"
+            type="text"
+            [disabled]="disabled"
+            [placeholder]="placeHolder"
+            (input)="onChange($event.target.value)"
+            (blur)="onTouched($event.target.value)">
+        <label class="sp-field-label">{{ label }}</label>
+        <button type="button" class="sp-field-text-btn" *ngIf="className == 'sp-form-fld-date'">
+            <i class="material-icons">calendar_today</i>
+        </button>
+    </div>
+    <div class="sp-field-sub">
+        <span class="sp-field-hint">{{ sHint }}</span>
+        <!-- <span class="velo-form-input-hint">40</span> -->
+    </div>
+</div>

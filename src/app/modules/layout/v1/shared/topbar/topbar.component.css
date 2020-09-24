@@ -1,0 +1,62 @@
+.sp-topbar {
+    /* background-color: #74c6eb; */
+    padding: 0 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sp-logo {
+    height: 65px;
+    align-self: center;
+    border: 0;
+}
+.sp-topbar-actions {
+    display: inline-flex;
+    align-items: center;
+}
+.sp-topbar-db {
+    color: #263238;
+    /* font-weight: bold; */
+}
+.sp-topbar-btn,
+.sp-topbar-link {
+    color: #263238;
+    cursor: pointer;
+}
+.sp-topbar-btn {
+    font-weight: 700;
+    /* margin: 0 8px; */
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: #FFFFFF;
+    /* border-bottom: 3px solid #74c6eb; */
+    padding: 4px 12px;
+    display: inline-flex;
+    align-items: center;
+}
+.sp-topbar-btn:hover {
+    /* filter: brightness(1.5); */
+    /* border: 1px solid rgba(0, 0, 0, 0.4); */
+    border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+}
+.sp-topbar-btn .btn-icon {
+    margin-right: 8px;
+}
+.sp-topbar-link {
+    background-color: #74c6eb;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    text-align: center;
+    line-height: 32px;
+    vertical-align: middle;
+    padding: 8px 0;
+    margin-left: 4px;
+    transition: filter .2s;
+    /* cursor: pointer; */
+}
+.sp-topbar-link:hover {
+    filter: brightness(1.5);
+}
+

@@ -1,0 +1,76 @@
+/* .sp-field-text-wrapper {
+    font-size: 14px;
+    padding-top: 8px;
+    border: 0px solid green;
+}
+.sp-field-wrapper {
+    position: relative;
+    display: block;
+} */
+.sp-field-file {
+    padding: 1em 12px 0.5em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    font-size: inherit;
+    box-sizing: border-box;
+    width: 100%;
+}
+/* .sp-field-file::placeholder {
+    color: #CCC;
+} */
+/* .sp-field-label {
+    position: absolute;
+    padding: 0 6px;
+    background-color: #FFFFFF;
+    top: -0.4em;
+    left: 0.6em;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 500;
+    transition: transform .15s ease-in;
+} */
+.sp-field-file:focus {
+    outline: none;
+    border: 1px solid #1565C0;
+}
+/* .velo-input-text:focus + label,
+.velo-input-text:not(:placeholder-shown) + label
+{
+    transform: translateX(-0.8em) translateY(-1.4em) scale(0.75);
+    padding: 0 6px;
+    color: #333333;
+} */
+/* .velo-input-text:empty {
+    background-color: #FF0000;
+} */
+/* .velo-input-icon {
+    position: absolute;
+    top: 0.35em;
+    right: -1.3em;
+}
+.velo-input-text:not(:placeholder-shown):required:invalid ~ .velo-input-icon::after {
+    content: "warning";
+    color: #FBC02D;
+}
+.velo-input-text:required:valid ~ .velo-input-icon::after {
+    content: "check";
+    color: #26A69A;
+} */
+/* .velo-input-text:focus:required:invalid ~ .velo-input-icon::after {
+    content: "warning";
+    color: #FBC02D;
+} */
+/* .sp-field-text-sub {
+    margin: 0 6px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+} */
+
+/* .velo-input-text:invalid {
+    border: 1px solid red;
+} */
+/* .sp-field-text-hint {
+    color: rgba(0, 0, 0, 0.8);
+    padding-top: 3px;
+} */

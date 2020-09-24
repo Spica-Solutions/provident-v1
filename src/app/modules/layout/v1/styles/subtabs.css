@@ -1,0 +1,15 @@
+.sp-subtab-wrapper {
+    border: 0px solid red;
+}
+.sp-subtab-header {
+    padding-bottom: 6px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #EEEEEE;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    font-size: 14px;
+}
+.sp-subtab-header > span {
+    margin-right: 24px;
+}

@@ -1,0 +1,16 @@
+<div class="sp-field-wrapper">
+    <div class="sp-field-content">
+        <select #select
+            class="sp-field-select {{className}}"
+            (blur)="onTouched($event.target.value)">
+            <option value="1">Central Office</option>
+            <option value="2">Region I</option>
+            <option value="3">Region IV-A</option>
+        </select>
+        <label class="sp-field-label">{{ label }}</label>
+    </div>
+    <div class="sp-field-sub">
+        <span class="sp-field-hint">{{ sHint }}</span>
+        <!-- <span class="velo-form-input-hint">40</span> -->
+    </div>
+</div>

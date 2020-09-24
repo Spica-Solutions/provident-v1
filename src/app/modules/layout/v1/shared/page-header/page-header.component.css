@@ -1,0 +1,11 @@
+.sp-page-header {
+    border: 0px solid red;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+}
+.sp-page-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-right: 48px; 
+}

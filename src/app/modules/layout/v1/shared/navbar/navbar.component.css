@@ -1,0 +1,79 @@
+.sp-navbar {
+    /* background-color: #0D47A1;
+    font-size: 14px;
+    padding: 0 24px; */
+    font-size: 14px;
+    background-color: #0D47A1;
+    /* background-color: #1B5E20; */
+    border: 0px solid red;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+.sp-navbar ul {
+    list-style: none;
+}
+.sp-navbar a {
+    display: block;
+    background-color: #0D47A1;
+    /* background-color: #1B5E20; */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 18px;
+    font-weight: 500;
+    transition: background-color .1s;
+}
+.sp-navbar a:hover {
+    background-color: #1565C0;
+    /* background-color: #2E7D32; */
+}
+.sp-navbar-links {
+    display: inline-block;
+}
+.sp-navbar-links li {
+    position: relative;
+}
+.sp-navbar-links > li {
+    float: left;
+}
+.sp-navbar-links li a:first-child:nth-last-child(2):before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    top: 50%;
+    right: 5px;
+}
+.sp-navbar-links ul {
+    position: absolute;
+    white-space: nowrap;
+    z-index: 10;
+    left: -99999em;
+}
+.sp-navbar-links > li:hover > ul {
+    left: auto;
+    margin-top: 0;
+    min-width: 100%;
+}
+/* .sp-navbar-link {
+    line-height: 24px;
+} */
+.sp-navbar-links ul li a {
+    background-color: #E3F2FD;
+    color: #0D47A1;
+    font-weight: normal;
+    /* transition: background-color .1 */
+}
+.sp-navbar-links ul li a:hover {
+    background-color: #1565C0;
+    color: #ffffff;
+}
+.sp-navbar-link-active {
+    /* background-color: #FFFFFF; */
+    background-color: #E3F2FD;
+    /* color: #1565C0; */
+    color: #0D47A1;
+}

@@ -1,0 +1,30 @@
+.sp-field-wrapper {
+    font-size: 14px;
+    padding-top: 8px;
+    border: 0px solid green;
+}
+.sp-field-content {
+    position: relative;
+    display: block;
+}
+.sp-field-label {
+    position: absolute;
+    padding: 0 6px;
+    background-color: #FFFFFF;
+    top: -0.4em;
+    left: 0.6em;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+    transition: transform .15s ease-in;
+}
+.sp-field-sub {
+    margin: 0 6px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+}
+.sp-field-hint {
+    color: rgba(0, 0, 0, 0.8);
+    padding-top: 3px;
+}
