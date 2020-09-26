@@ -8,8 +8,15 @@
     display: flex;
     flex-flow: row;
     align-items: center;
+    justify-content: space-between;
     font-size: 14px;
 }
-.sp-subtab-header > span {
+.sp-subtab-header-note {
     margin-right: 24px;
+}
+/* .sp-subtab-header-search {
+    padding: 4px 40px 4px 8px;
+} */
+.sp-subtab-header-form {
+    padding: 0 12px;
 }

@@ -1,0 +1,22 @@
+<div class="sp-page-container">
+    <div class="sp-page-header">
+        <div>
+            <span class="sp-page-title">{{ pageTitle | titlecase }}</span>
+            <!-- <button type="button" class="sp-form-btn">View Member</button>
+            <button type="button" class="sp-form-btn">History</button> -->
+        </div>
+        <!-- <div>
+            <button type="button" class="sp-form-btn">Delete this Member</button>
+        </div> -->
+    </div>
+    
+    <div>
+        <button type="button" class="sp-form-btn-def" (click)="gotoLoan(123)">Submit Application</button>
+        <!-- <button type="button" class="sp-form-btn"
+            *ngIf="showMemInfo == true"
+            (click)="toggleMemInfo(false)">Hide Member Info</button> -->
+        <button type="button" class="sp-form-btn" (click)="gotoMember(123)">View Member</button>
+    </div>
+    
+    <sp-loan-edit-form></sp-loan-edit-form>
+</div>

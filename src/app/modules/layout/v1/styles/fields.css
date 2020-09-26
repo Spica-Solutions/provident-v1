@@ -13,9 +13,9 @@
     background-color: #FFFFFF;
     top: -0.4em;
     left: 0.6em;
-    font-size: 0.9em;
+    font-size: 0.8em;
     color: rgba(0, 0, 0, 0.6);
-    font-weight: 500;
+    font-weight: normal;
     transition: transform .15s ease-in;
 }
 .sp-field-sub {

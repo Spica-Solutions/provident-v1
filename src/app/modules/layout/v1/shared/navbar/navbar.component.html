@@ -6,25 +6,24 @@
             </a>
         </li>
         <li>
-            <a title="Employees" [routerLink]="['employee']" class="sp-navbar-link" routerLinkActive="active">
+            <a title="Members" [routerLink]="['member']" class="sp-navbar-link" routerLinkActive="active">
                 <!-- <i class="material-icons">calendar_today</i> -->
-                <span>Employees</span>
+                <span>Members</span>
             </a>
             <ul>
-                <li><a title="List" [routerLink]="['employee/list']">List</a></li>
-                <li><a title="Edit" [routerLink]="['employee/edit']">Edit</a></li>
-                <li><a title="New" [routerLink]="['employee/new']">New</a></li>
-                <li><a title="Import" [routerLink]="['employee/import']">Import</a></li>
+                <li><a title="List" [routerLink]="['member/list']">List</a></li>
+                <!-- <li><a title="Edit" [routerLink]="['member/edit']">Edit</a></li> -->
+                <li><a title="New" [routerLink]="['member/new']">New</a></li>
+                <li><div class="sp-navbar-menu-sep"></div></li>
+                <li><a title="Import" [routerLink]="['member/import']">Import</a></li>
             </ul>
         </li>
         <li>
-            <a title="Transactions" [routerLink]="['transaction']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                <span>Transactions</span>
+            <a title="Loan" [routerLink]="['transaction/loan/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <span>Loans</span>
             </a>
             <ul>
-                <li><a title="Loans" [routerLink]="['transaction/loan']">Loans</a></li>
-                <li><a title="Payments" [routerLink]="['transaction/loan']">Payments</a></li>
-                <li><a title="Bank" [routerLink]="['transaction/loan']">Bank</a></li>
+                <li><a title="Loans" [routerLink]="['transaction/loan/list']">List</a></li>
             </ul>
         </li>
         <li>
@@ -50,10 +49,13 @@
                 <span>Setup</span>
             </a>
             <ul>
-                <li><a title="Accounts" href="#">Chart of Accounts</a></li>
-                <li><a title="Accounts" href="#">Locations</a></li>
-                <li><a title="Accounts" href="#">Departments</a></li>
-                <li><a title="Accounts" href="#">Users</a></li>
+                <li><a title="Accounts" [routerLink]="['setup/account']" class="sp-navbar-link">Accounts</a></li>
+                <li><a title="Accounts" [routerLink]="['setup/loc']" class="sp-navbar-link">Locations</a></li>
+                <li><a title="Accounts" [routerLink]="['setup/dept']" class="sp-navbar-link">Departments</a></li>
+                <li><a title="Accounts" [routerLink]="['setup/user']" class="sp-navbar-link">Users</a></li>
+                <li><a title="Accounts" [routerLink]="['setup/role']" class="sp-navbar-link">Roles</a></li>
+                <li><div class="sp-navbar-menu-sep"></div></li>
+                <li><a title="Accounts" [routerLink]="['setup/companysettings']" class="sp-navbar-link">Company Settings</a></li>
             </ul>
         </li>
     </ul>

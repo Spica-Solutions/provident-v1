@@ -77,3 +77,9 @@
     /* color: #1565C0; */
     color: #0D47A1;
 }
+.sp-navbar-menu-sep {
+    background-color: #E3F2FD;
+    border-collapse: collapse;
+    border-top: 1px solid #0D47A1;
+    border-bottom: 1px solid #0D47A1;
+}

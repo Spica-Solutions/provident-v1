@@ -1,0 +1,62 @@
+<div class="sp-page-container">
+    <div class="sp-page-header">
+        <div>
+            <span class="sp-page-title">Member - Villarama, Marlon</span>
+            <!-- <button type="button" class="sp-form-btn">View Member</button>
+            <button type="button" class="sp-form-btn">History</button> -->
+        </div>
+        <div>
+            <button type="button" class="sp-form-btn"
+                (click)="gotoList()">Members List</button>
+            <button type="button" class="sp-form-btn">Delete</button>
+        </div>
+    </div>
+    
+    <div class="sp-page-subtabs">
+        <ul>
+            <li>
+                <a [routerLink]="['details']"
+                    routerLinkActive="active"
+                    queryParamsHandling="preserve">
+                    <span>Member Details</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['benefs']"
+                    routerLinkActive="active"
+                    queryParamsHandling="preserve">
+                    <span>Beneficiaries</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['contribs']"
+                    routerLinkActive="active"
+                    queryParamsHandling="preserve">
+                    <span>Contributions</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['loans']"
+                    routerLinkActive="active"
+                    queryParamsHandling="preserve">
+                    <span>Loans</span>
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+
+    <router-outlet></router-outlet>
+
+    <!-- <div class="sp-page-footer">
+        <div>
+            -- <span class="sp-page-title">Member - Villarama, Marlon</span> --
+            -- <button type="button" class="sp-form-btn">View Member</button>
+            <button type="button" class="sp-form-btn">History</button> --
+        </div>
+        <div>
+            -- <button type="button" class="sp-form-btn-def">Update Member</button> --
+            -- <button type="button" class="sp-form-btn">Delete this Member</button> --
+        </div>
+    </div> -->
+</div>

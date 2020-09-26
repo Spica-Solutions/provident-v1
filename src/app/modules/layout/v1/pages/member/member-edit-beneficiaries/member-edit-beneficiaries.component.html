@@ -1,0 +1,81 @@
+<div class="sp-subtab-wrapper">
+    <div class="sp-subtab-header">
+        <div>
+            <span class="sp-subtab-header-note">Found 3 beneficiaries</span>
+            <button type="button"
+                *ngIf="showBenForm != true"
+                class="sp-form-btn-minor"
+                (click)="toggleBenForm(true)">
+                <span>Add Beneficiary</span>
+            </button>
+        </div>
+    </div>
+    <div class="sp-subtab-header-form" *ngIf="showBenForm == true">
+        <div class="sp-form-row">
+            <sp-field-text
+                label="First Name"
+                className="sp-form-fld-name"
+                ngModel name="firstname">
+            </sp-field-text>
+            <sp-field-text
+                label="Last Name"
+                className="sp-form-fld-name"
+                ngModel name="lastname">
+            </sp-field-text>
+            <sp-field-text
+                label="Birth Date"
+                className="sp-form-fld-date"
+                ngModel name="dob">
+            </sp-field-text>
+            <sp-field-select
+                label="Relationship"
+                className="sp-form-fld-name"
+                ngModel name="rel">
+            </sp-field-select>
+        </div>
+        <div class="sp-form-row">
+            <button type="button"
+                class="sp-form-btn-def"
+                (click)="toggleBenForm(false)">
+                <span>Create Beneficiary</span>
+            </button>
+            <button type="button"
+                class="sp-form-btn"
+                (click)="toggleBenForm(false)">
+                <span>Cancel</span>
+            </button>
+        </div>
+    </div>
+    <div class="sp-subtab-content">
+        <table class="sp-table sp-table-actionable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                    <th>Relationship</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Villarama, Marlon</td>
+                    <td>Jul 7, 1978</td>
+                    <td>favorite</td>
+                    <td>
+                        <button type="button" class="btn-action">Edit</button>
+                        <button type="button" class="btn-action">Delete</button>
+                    </td>
+                </tr>
+                <tr class="even">
+                    <td>Villarama, Marielle</td>
+                    <td>Sep 23, 1998</td>
+                    <td>epal</td>
+                    <td>
+                        <button type="button" class="btn-action">Edit</button>
+                        <button type="button" class="btn-action">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

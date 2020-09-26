@@ -1,0 +1,45 @@
+<div>
+    <button type="button" class="sp-form-btn-def">Create Account</button>
+    <!-- <button type="button" class="sp-form-btn"
+        *ngIf="showMemInfo == true"
+        (click)="toggleMemInfo(false)">Hide Member Info</button> -->
+    <button type="button" class="sp-form-btn" (click)="gotoList()">Back to List</button>
+</div>
+
+<div class="sp-page-content">
+    <div class="sp-page-content-col">
+        <div class="sp-card">
+            <div class="sp-card-header">Account Details</div>
+            <div class="sp-card-content">
+                <div class="sp-form-row">
+                    <sp-field-text
+                        label="Number"
+                        className="sp-form-fld-phone"
+                        ngModel name="accnum">
+                    </sp-field-text>
+                </div>
+                <div class="sp-form-row">
+                    <sp-field-text
+                        label="Name"
+                        className="sp-form-fld-email"
+                        ngModel name="accname">
+                    </sp-field-text>
+                </div>
+                <div class="sp-form-row">
+                    <sp-field-select
+                        label="Type"
+                        className="sp-form-fld-email"
+                        ngModel name="acctype">
+                    </sp-field-select>
+                </div>
+                <div class="sp-form-row">
+                    <sp-field-text
+                        label="Opening Balance"
+                        className="sp-form-fld-phone"
+                        ngModel name="balance">
+                    </sp-field-text>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

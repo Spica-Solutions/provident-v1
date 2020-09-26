@@ -1,0 +1,52 @@
+.sp-table {
+    border: 0px solid red;
+    width: 100%;
+    font-size: 14px;
+}
+.sp-table thead {
+    border-bottom: 2px solid #BDBDBD;
+}
+.sp-table thead th {
+    text-align: start;
+    font-weight: 500;
+}
+.sp-table thead th:not(:last-of-type) {
+    border-right: 1px solid #E0E0E0;
+}
+.sp-table-actionable thead th:last-of-type {
+    width: 150px;
+}
+.sp-table thead th,
+.sp-table tbody td {
+    padding: 6px 8px;
+}
+.sp-table tr.even {
+    background-color: #FAFAFA;
+}
+.sp-table tbody > tr {
+    transition: background-color .2s;
+}
+.sp-table tbody > tr:hover {
+    background-color: #E3F2FD;
+}
+/* .sp-table td {
+    align-items: center;
+} */
+.sp-table td {
+    font-size: 12px;
+    line-height: 18px;
+
+}
+.sp-table button.btn-action {
+    border: 1px solid #757575;
+    background-color: #EEEEEE;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 4px;
+    padding: 3px 8px;
+    font-size: 12px;
+    transition: background-color .2s;
+}
+.sp-table button.btn-action i {
+    font-size: 24px;
+}

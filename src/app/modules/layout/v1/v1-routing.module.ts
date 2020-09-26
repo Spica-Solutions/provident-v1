@@ -7,9 +7,11 @@ const routes: Routes = [
         component: V1Component,
         children: [
             // { path: 'list', loadChildren: async () => (await import('./pages/list/list.module')).ListModule },
-            { path: 'employee', loadChildren: async () => (await import('./pages/employee/employee.module')).EmployeeModule },
+            { path: 'member', loadChildren: async () => (await import('./pages/member/member.module')).MemberModule },
+            { path: 'transaction', loadChildren: async () => (await import('./pages/transaction/transaction.module')).TransactionModule },
             { path: 'report', loadChildren: async () => (await import('./pages/report/report.module')).ReportModule },
-            { path: 'upload', loadChildren: async () => (await import('./pages/upload/upload.module')).UploadModule }
+            // { path: 'upload', loadChildren: async () => (await import('./pages/upload/upload.module')).UploadModule }
+            { path: 'setup', loadChildren: async () => (await import('./pages/setup/setup.module')).SetupModule  }
         ]
     }
 ];
