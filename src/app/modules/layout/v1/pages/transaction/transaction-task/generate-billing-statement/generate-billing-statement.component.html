@@ -1,0 +1,139 @@
+<div class="sp-page-container">
+    <div class="sp-page-header">
+        <div>
+            <span class="sp-page-title">Generate Billing Statement</span>
+        </div>
+    </div>
+    <div class="sp-form-narrow">
+        <div class="sp-form-row">
+            <sp-field-select
+                label="Office"
+                type="office"
+                class="sp-form-fld-email"
+                ngModel name="office">
+            </sp-field-select>
+            <sp-field-text-view
+                label="Month/Year"
+                text="September 2020"
+                class="sp-form-fld-phone">
+            </sp-field-text-view>
+        </div>
+        <div class="sp-form-row-btn-bottom">
+            <button type="button" class="sp-form-btn-def"
+                *ngIf="showStatement != true"
+                (click)="generate()">Generate Statement</button>
+            <button type="button" class="sp-form-btn-def"
+                *ngIf="showStatement == true"
+                (click)="generate()">Download Statement</button>
+            <button type="button" class="sp-form-btn"
+                *ngIf="showStatement == true && showAllDetail != true"
+                (click)="showDetail(true)">Show Loan Details</button>
+            <button type="button" class="sp-form-btn"
+                *ngIf="showStatement == true && showAllDetail == true"
+                (click)="showDetail(false)">Hide Loan Details</button>
+        </div>
+    </div>
+
+    <div class="sp-page-results-container" *ngIf="showStatement == true">
+        <table class="sp-table sp-table-actionable">
+            <thead>
+                <tr>
+                    <th>Member Name</th>
+                    <th>Amount to Deduct</th>
+                    <th>Loans</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Villarama, Violeta</td>
+                    <td>6,250.00</td>
+                    <td>5</td>
+                    <td>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="viewDetail(123)">Details</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" *ngIf="showAllDetail == true" class="sp-table-detail-line">
+                        <table class="sp-table-detail-table">
+                            <tr>
+                                <td>Regular Loan</td>
+                                <td>Aug 2020</td>
+                                <td>1,250.00</td>
+                            </tr>
+                            <tr>
+                                <td>Regular Loan</td>
+                                <td>Sep 2020</td>
+                                <td>2,500.00</td>
+                            </tr>
+                            <tr>
+                                <td>Calamity Loan</td>
+                                <td>Sep 2020</td>
+                                <td>1,500.00</td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Loan</td>
+                                <td>Aug 2020</td>
+                                <td>500.00</td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Loan</td>
+                                <td>Sep 2020</td>
+                                <td>500.00</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="even">
+                    <td>Villarama, Marielle</td>
+                    <td>5,000.00</td>
+                    <td>1</td>
+                    <td>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="viewDetail(123)">Details</button>
+                    </td>
+                </tr>
+                <tr class="even">
+                    <td colspan="4" *ngIf="showAllDetail == true" class="sp-table-detail-line">
+                        <table class="sp-table-detail-table">
+                            <tr>
+                                <td>Regular Loan</td>
+                                <td>Sep 2020</td>
+                                <td>5,000.00</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Villarama, Marlene</td>
+                    <td>8,000.00</td>
+                    <td>2</td>
+                    <td>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="viewDetail(123)">Details</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" *ngIf="showAllDetail == true" class="sp-table-detail-line">
+                        <table class="sp-table-detail-table">
+                            <tr>
+                                <td>Regular Loan</td>
+                                <td>Sep 2020</td>
+                                <td>5,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Loan</td>
+                                <td>Sep 2020</td>
+                                <td>3,000.00</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

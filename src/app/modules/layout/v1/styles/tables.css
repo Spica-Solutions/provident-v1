@@ -13,6 +13,9 @@
 .sp-table thead th:not(:last-of-type) {
     border-right: 1px solid #E0E0E0;
 }
+.sp-table-markable thead th:first-of-type {
+    width: 40px;
+}
 .sp-table-actionable thead th:last-of-type {
     width: 150px;
 }
@@ -49,4 +52,22 @@
 }
 .sp-table button.btn-action i {
     font-size: 24px;
+}
+.sp-table-detail-line {
+    padding: 0 48px !important;
+}
+.sp-table-detail-table td {
+    min-width: 70px;
+}
+.sp-table-detail-table td:first-of-type {
+    width: 130px;
+}
+.sp-table-detail-table td:last-of-type {
+    text-align: end;
+}
+.sp-table-detail-table td:nth-last-of-type(2) {
+    text-align: end;
+}
+.sp-table-detail-strike {
+    text-decoration: line-through;
 }

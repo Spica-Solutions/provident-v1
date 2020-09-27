@@ -1,1 +1,31 @@
-<p>company-settings works!</p>
+<div class="sp-page-container">
+    <div class="sp-page-header">
+        <span class="sp-page-title">Global Settings</span>
+    </div>
+    <div>
+        <div class="sp-form-row">
+            <sp-field-text
+                label="Max. Loan Amount"
+                class="sp-form-fld-phone"
+                ngModel name="maxloanamount">
+            </sp-field-text>
+        </div>
+        <div class="sp-form-row">
+            <sp-field-text
+                label="Min. Contributions"
+                class="sp-form-fld-phone"
+                ngModel name="mincontribforloan">
+            </sp-field-text>
+        </div>
+        <div class="sp-form-row">
+            <sp-field-text
+                label="Loan Interest"
+                class="sp-form-fld-phone"
+                ngModel name="loaninterest">
+            </sp-field-text>
+        </div>
+        <div class="sp-form-row-btn-bottom">
+            <button type="button" class="sp-form-btn-def">Submit</button>
+        </div>
+    </div>
+</div>

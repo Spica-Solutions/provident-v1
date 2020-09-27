@@ -1,1 +1,101 @@
-<p>departments works!</p>
+<div class="sp-page-container">
+    <div class="sp-page-header">
+        <div>
+            <span class="sp-page-title">Offices</span>
+        </div>
+        <div>
+            <button type="button" class="sp-form-btn-def"
+                (click)="toggleEditForm(true)">Add Office</button>
+        </div>
+    </div>
+
+    <div class="sp-subtab-header-form" *ngIf="showEditForm == true">
+        <div class="sp-form-row">
+            <sp-field-text
+                label="Office Name"
+                className="sp-form-fld-email"
+                ngModel name="name">
+            </sp-field-text>
+            <sp-field-select
+                label="Region"
+                className="sp-form-fld-email"
+                ngModel name="name">
+            </sp-field-select>
+            <sp-field-checkbox
+                label="Active">
+            </sp-field-checkbox>
+        </div>
+        <div class="sp-form-row">
+            <button type="button"
+                class="sp-form-btn-def"
+                (click)="toggleEditForm(false)">
+                <span>Create Department</span>
+            </button>
+            <button type="button"
+                class="sp-form-btn"
+                (click)="toggleEditForm(false)">
+                <span>Cancel</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="sp-page-content-list">
+        <table class="sp-table sp-table-actionable">
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Office</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Central Office</td>
+                    <td>Administrative Office</td>
+                    <td>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="editDep(456)">Edit</button>
+                    </td>
+                </tr>
+                <tr class="even">
+                    <td>Central Office</td>
+                    <td>General Services</td>
+                    <td>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="editDep(456)">Edit</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Region I - Ilocos</td>
+                    <td>Accounting</td>
+                    <td>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="editDep(456)">Edit</button>
+                    </td>
+                </tr>
+                <tr class="even">
+                    <td>Region I - Ilocos</td>
+                    <td>HRMD</td>
+                    <td>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="editDep(456)">Edit</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Region I - Ilocos</td>
+                    <td>Motorpool</td>
+                    <td>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="editDep(456)">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

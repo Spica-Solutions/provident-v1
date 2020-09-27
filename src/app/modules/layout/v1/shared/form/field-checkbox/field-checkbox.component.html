@@ -1,9 +1,13 @@
 <div class="sp-field-wrapper">
     <div class="sp-field-content">
-        <input #input
-            class="sp-field-cb {{className}}"
-            type="checkbox">
-        <label class="sp-field-cb-label">{{ label }}</label>
+        <label class="sp-field-cb-container">
+            <span class="sp-field-cb-label">{{ label }}</span>
+            <input #input
+                class="sp-field-cb"
+                type="checkbox"
+                checked>
+            <span class="sp-field-cb-check"></span>
+        </label>
     </div>
 </div>
 

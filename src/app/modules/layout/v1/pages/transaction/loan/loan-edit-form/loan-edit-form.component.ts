@@ -16,6 +16,7 @@ import { SpUiService } from 'src/app/modules/services/sp-ui.service';
 export class LoanEditFormComponent implements OnInit, OnDestroy {
 
     showMemInfo = false;
+    showSchedPreview = false;
     mem: string = '';
     id: string = '';
     rtype: string = '';
@@ -39,10 +40,14 @@ export class LoanEditFormComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.paramsSub.unsubscribe();
-      }
+    }
     
     toggleMemInfo(show): void {
         this.showMemInfo = show;
+    }
+
+    previewSchedule(show): void {
+        this.showSchedPreview = show;
     }
 
     parseRouteData(): void {

@@ -9,7 +9,8 @@ const routes: Routes = [
         children: [
             { path: 'new', loadChildren: async () => (await import('./loan-new/loan-new.module')).LoanNewModule },
             { path: 'edit', loadChildren: async () => (await import('./loan-edit/loan-edit.module')).LoanEditModule },
-            { path: 'list', loadChildren: async () => (await import('./loan-list/loan-list.module')).LoanListModule }
+            { path: 'list', loadChildren: async () => (await import('./loan-list/loan-list.module')).LoanListModule },
+            { path: 'approve', loadChildren: async () => (await import('./loan-approve/loan-approve.module')).LoanApproveModule }
         ]
     }
 ];

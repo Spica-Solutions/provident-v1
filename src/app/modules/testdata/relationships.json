@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "text": "Father"
+    },
+    {
+        "id": "2",
+        "text": "Mother"
+    },
+    {
+        "id": "4",
+        "text": "Sibling"
+    },
+    {
+        "id": "5",
+        "text": "Spouse"
+    },
+    {
+        "id": "6",
+        "text": "Child"
+    },
+    {
+        "id": "7",
+        "text": "Grandparent"
+    },
+    {
+        "id": "8",
+        "text": "Grandchild"
+    },
+    {
+        "id": "9",
+        "text": "Nephew"
+    },
+    {
+        "id": "1",
+        "text": "Niece"
+    }
+]

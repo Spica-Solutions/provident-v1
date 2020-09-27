@@ -1,0 +1,87 @@
+<div class="sp-page-container">
+    <div class="sp-page-header">
+        <div>
+            <span class="sp-page-title">Approve Loans</span>
+        </div>
+        <div>
+            <!-- <button type="button" class="sp-form-btn-def"
+                (click)="toggleEditForm(true)">Add Location</button> -->
+        </div>
+    </div>
+
+    <div>
+        <button type="button" class="sp-form-btn-def">Approve All</button>
+        <!-- <button type="button" class="sp-form-btn">Reset</button> -->
+        <button type="button" class="sp-form-btn">Decline All</button>
+    </div>
+    
+    <!-- <div class="sp-subtab-header-form" *ngIf="showEditForm == true">
+        <div class="sp-form-row">
+            <sp-field-text
+                label="Location Name"
+                className="sp-form-fld-email"
+                ngModel name="name">
+            </sp-field-text>
+            <sp-field-checkbox
+                label="Active">
+            </sp-field-checkbox>
+        </div>
+        <div class="sp-form-row">
+            <button type="button"
+                class="sp-form-btn-def"
+                (click)="toggleEditForm(false)">
+                <span>Create Location</span>
+            </button>
+            <button type="button"
+                class="sp-form-btn"
+                (click)="toggleEditForm(false)">
+                <span>Cancel</span>
+            </button>
+        </div>
+    </div> -->
+
+    <div class="sp-page-content-list">
+        <table class="sp-table sp-table-actionable">
+            <thead>
+                <tr>
+                    <th>Member</th>
+                    <th>Loan Details</th>
+                    <th>Submit Date</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Villarama, Marlon</td>
+                    <td>Emergency Loan<br/><strong>10,000.00</strong> (12 months)</td>
+                    <td>Jul 7 2020</td>
+                    <td>Central Office</td>
+                    <td>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="approve(456, true)">Approve</button>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="approve(456, false)">Decline</button>
+                    </td>
+                </tr>
+                <tr class="even">
+                    <td>Villarama, Marielle</td>
+                    <td>Regular Loan<br/><strong>54,250.00</strong> (36 months)</td>
+                    <td>Sep 23 2020</td>
+                    <td>Region II - Cagayan Valley</td>
+                    <td>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="approve(456, true)">Approve</button>
+                        <button type="button"
+                            class="btn-action"
+                            (click)="approve(456, false)">Decline</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -5,7 +5,32 @@
         </div>
         <div>
             <button type="button" class="sp-form-btn-def"
-                (click)="showNew()">Add Location</button>
+                (click)="toggleEditForm(true)">Add Location</button>
+        </div>
+    </div>
+
+    <div class="sp-subtab-header-form" *ngIf="showEditForm == true">
+        <div class="sp-form-row">
+            <sp-field-text
+                label="Location Name"
+                className="sp-form-fld-email"
+                ngModel name="name">
+            </sp-field-text>
+            <sp-field-checkbox
+                label="Active">
+            </sp-field-checkbox>
+        </div>
+        <div class="sp-form-row">
+            <button type="button"
+                class="sp-form-btn-def"
+                (click)="toggleEditForm(false)">
+                <span>Create Location</span>
+            </button>
+            <button type="button"
+                class="sp-form-btn"
+                (click)="toggleEditForm(false)">
+                <span>Cancel</span>
+            </button>
         </div>
     </div>
 
@@ -13,82 +38,49 @@
         <table class="sp-table sp-table-actionable">
             <thead>
                 <tr>
-                    <th>Location Name</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Balance</th>
+                    <th>Location</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1000</td>
-                    <td>Cash</td>
-                    <td>Bank</td>
-                    <td>66,000.00</td>
+                    <td>Central Office</td>
                     <td>
                         <button type="button"
                             class="btn-action"
-                            (click)="gotoEdit(456)">View</button>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoRegister(456)">Register</button>
+                            (click)="editLoc(456)">Edit</button>
                     </td>
                 </tr>
                 <tr class="even">
-                    <td>1011</td>
-                    <td>Checking - BDO</td>
-                    <td>Bank</td>
-                    <td>397,389.00</td>
+                    <td>Region I - Ilocos</td>
                     <td>
                         <button type="button"
                             class="btn-action"
-                            (click)="gotoEdit(456)">View</button>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoRegister(456)">Register</button>
+                            (click)="editLoc(456)">Edit</button>
                     </td>
                 </tr>
                 <tr>
-                    <td>1150</td>
-                    <td>Accounts Receivable</td>
-                    <td>Accounts Receivable</td>
-                    <td>5,100.00</td>
+                    <td>Region II - Cagayan Valley</td>
                     <td>
                         <button type="button"
                             class="btn-action"
-                            (click)="gotoEdit(456)">View</button>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoRegister(456)">Register</button>
+                            (click)="editLoc(456)">Edit</button>
                     </td>
                 </tr>
                 <tr class="even">
-                    <td>1300</td>
-                    <td>Prepaid Expenses</td>
-                    <td>Expense</td>
-                    <td>2,916.00</td>
+                    <td>Region III - Central Luzon</td>
                     <td>
                         <button type="button"
                             class="btn-action"
-                            (click)="gotoEdit(456)">View</button>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoRegister(456)">Register</button>
+                            (click)="editLoc(456)">Edit</button>
                     </td>
                 </tr>
                 <tr>
-                    <td>2100</td>
-                    <td>Payroll Accruals</td>
-                    <td>Other Current Liability</td>
-                    <td>1,761,850.58</td>
+                    <td>Region IV-A - CALABARZON</td>
                     <td>
                         <button type="button"
                             class="btn-action"
-                            (click)="gotoEdit(456)">View</button>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoRegister(456)">Register</button>
+                            (click)="editLoc(456)">Edit</button>
                     </td>
                 </tr>
             </tbody>

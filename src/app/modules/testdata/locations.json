@@ -1,0 +1,66 @@
+[
+    {
+        "id": "1",
+        "text": "Central Office"
+    },
+    {
+        "id": "2",
+        "text": "Region I - Ilocos"
+    },
+    {
+        "id": "3",
+        "text": "Region II - Cagayan valley"
+    },
+    {
+        "id": "4",
+        "text": "Region III - Central Luzon"
+    },
+    {
+        "id": "5",
+        "text": "Region IV-A - CALABARZON"
+    },
+    {
+        "id": "6",
+        "text": "Region IV-A - MIMAROPA"
+    },
+    {
+        "id": "7",
+        "text": "Region V - Bicol"
+    },
+    {
+        "id": "8",
+        "text": "Region VI - Western Visayas"
+    },
+    {
+        "id": "9",
+        "text": "Region VII - Central Visayas"
+    },
+    {
+        "id": "10",
+        "text": "Region VIII - Eastern Visayas"
+    },
+    {
+        "id": "11",
+        "text": "Region IX - Zamboanga Peninsula"
+    },
+    {
+        "id": "12",
+        "text": "Region X - Northern Mindanao"
+    },
+    {
+        "id": "13",
+        "text": "Region XI - Davao"
+    },
+    {
+        "id": "14",
+        "text": "Region XII - SOCCSKSARGEN"
+    },
+    {
+        "id": "15",
+        "text": "Region XII - Caraga"
+    },
+    {
+        "id": "16",
+        "text": "Bangsamoro"
+    }
+]

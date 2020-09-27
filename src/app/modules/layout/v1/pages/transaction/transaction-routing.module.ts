@@ -7,7 +7,8 @@ const routes: Routes = [
         path: '',
         component: TransactionComponent,
         children: [
-            { path: 'loan', loadChildren: async () => (await import('./loan/loan.module')).LoanModule }
+            { path: 'loan', loadChildren: async () => (await import('./loan/loan.module')).LoanModule },
+            { path: 'task', loadChildren: async () => (await import('./transaction-task/transaction-task.module')).TransactionTaskModule }
         ]
     }
 ];

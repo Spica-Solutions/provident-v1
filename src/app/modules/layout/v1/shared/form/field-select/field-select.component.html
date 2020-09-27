@@ -3,9 +3,7 @@
         <select #select
             class="sp-field-select {{className}}"
             (blur)="onTouched($event.target.value)">
-            <option value="1">Central Office</option>
-            <option value="2">Region I</option>
-            <option value="3">Region IV-A</option>
+            <option *ngFor="let el of arr" [ngValue]="el">{{el.text}}</option>
         </select>
         <label class="sp-field-label">{{ label }}</label>
     </div>

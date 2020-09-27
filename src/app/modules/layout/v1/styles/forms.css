@@ -4,11 +4,11 @@
 }
 .sp-form-wide {
     width: 1200px;
-    border: 1px solid red;
+    border: 0px solid red;
 }
 .sp-form-semi {
     width: 800px;
-    border: 1px solid red;
+    border: 0px solid red;
 }
 .sp-form-narrow {
     width: 512px;
@@ -23,6 +23,7 @@
     display: flex;
     flex-flow: wrap;
     justify-content: flex-start;
+    align-items: center;
     gap: 16px;
 }
 /* .sp-form-row-btn-bottom {

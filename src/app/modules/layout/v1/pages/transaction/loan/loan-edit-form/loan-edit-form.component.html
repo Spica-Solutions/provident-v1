@@ -1,68 +1,4 @@
 <div class="sp-page-content">
-    <div class="sp-page-content-col">
-        <div class="sp-card">
-            <div class="sp-card-header">Loan Details</div>
-            <div class="sp-card-content" *ngIf="rtype == 'new'">
-                <div class="sp-form-row">
-                    <sp-field-select
-                        label="Type"
-                        className="sp-form-fld-email"
-                        ngModel name="loanType">
-                    </sp-field-select>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Amount"
-                        className="sp-form-fld-phone"
-                        ngModel name="amount">
-                    </sp-field-text>
-                    <sp-field-select
-                        label="Terms"
-                        className="sp-form-fld-phone"
-                        ngModel name="terms">
-                    </sp-field-select>
-                </div>
-            </div>
-            <div class="sp-card-content" *ngIf="rtype == 'edit'">
-                <div class="sp-form-row">
-                    <sp-field-text-view
-                        label="Type"
-                        text="Emergency Loan"
-                        className="sp-form-fld-email"
-                        ngModel name="loanType">
-                    </sp-field-text-view>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-text-view
-                        label="Amount"
-                        text="10,000.00"
-                        className="sp-form-fld-name"
-                        ngModel name="amount">
-                    </sp-field-text-view>
-                    <sp-field-text-view
-                        label="Terms"
-                        text="12-month term"
-                        className="sp-form-fld-phone"
-                        ngModel name="terms">
-                    </sp-field-text-view>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-text-view
-                        label="Status"
-                        text="Pending Approval"
-                        className="sp-form-fld-name"
-                        ngModel name="status">
-                    </sp-field-text-view>
-                    <sp-field-text-view
-                        label="Approver"
-                        text="Next Approver"
-                        className="sp-form-fld-name"
-                        ngModel name="approver">
-                    </sp-field-text-view>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- <div class="sp-page-content-col" *ngIf="showMemInfo == true"> -->
     <div class="sp-page-content-col">
@@ -131,8 +67,8 @@
                         ngModel name="title">
                     </sp-field-text-view>
                     <sp-field-text-view
-                        label="Salary"
-                        text="MDRT Level"
+                        label="Monthly Salary"
+                        text="1,000,000"
                         className="sp-form-fld-phone"
                         ngModel name="salary">
                     </sp-field-text-view>
@@ -154,90 +90,196 @@
             </div>
         </div>
     </div>
+
+    <div class="sp-page-content-col">
+        <div class="sp-card">
+            <div class="sp-card-header">Loan Details</div>
+            <div class="sp-card-content" *ngIf="rtype == 'new'">
+                <div class="sp-form-row">
+                    <sp-field-select
+                        label="Type"
+                        type="loantype"
+                        className="sp-form-fld-email"
+                        ngModel name="loanType">
+                    </sp-field-select>
+                </div>
+                <div class="sp-form-row">
+                    <sp-field-text
+                        label="Amount"
+                        className="sp-form-fld-phone"
+                        ngModel name="amount">
+                    </sp-field-text>
+                    <sp-field-select
+                        label="Terms"
+                        type="loanterm"
+                        className="sp-form-fld-phone"
+                        ngModel name="terms">
+                    </sp-field-select>
+                </div>
+                <div class="sp-form-row">
+                    <button type="button"
+                        (click)="previewSchedule(true)"
+                        class="sp-form-btn">Preview Remittance Schedule</button>
+                </div>
+            </div>
+            <div class="sp-card-content" *ngIf="rtype == 'edit'">
+                <div class="sp-form-row">
+                    <sp-field-text-view
+                        label="Type"
+                        text="Emergency Loan"
+                        className="sp-form-fld-email"
+                        ngModel name="loanType">
+                    </sp-field-text-view>
+                </div>
+                <div class="sp-form-row">
+                    <sp-field-text-view
+                        label="Amount"
+                        text="12,000.00"
+                        className="sp-form-fld-name"
+                        ngModel name="amount">
+                    </sp-field-text-view>
+                    <sp-field-text-view
+                        label="Terms"
+                        text="12-month term"
+                        className="sp-form-fld-phone"
+                        ngModel name="terms">
+                    </sp-field-text-view>
+                </div>
+
+                <!-- Approval Workflow Table -->
+                <div class="sp-form-row">
+                    <table class="sp-table">
+                        <thead>
+                            <tr>
+                                <th>Approver</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Checker</td>
+                                <td>Approved</td>
+                                <td>09/23/2020 4:13 PM</td>
+                            </tr>
+                            <tr class="even">
+                                <td>Endorser</td>
+                                <td>Pending Approval</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>Accountant</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr class="even">
+                                <td>Ma'am Violy</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="sp-page-content-list">
+<div class="sp-page-content-list" *ngIf="showSchedPreview == true || rtype == 'edit'">
     <table class="sp-table">
         <thead>
             <tr>
                 <th>Month / Year</th>
-                <th>Deduction</th>
-                <th>Status</th>
-                <th>Balance</th>
+                <th>Amount Due</th>
+                <th *ngIf="rtype=='edit'">Amount Remitted</th>
+                <th *ngIf="rtype=='edit'">Remittance Date</th>
+                <th *ngIf="rtype=='edit'">Balance</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>September 2020</td>
-                <td>100.00</td>
-                <td>Deducted from payroll</td>
-                <td>1,100.00</td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">1,000.00</td>
+                <td *ngIf="rtype=='edit'">Sep 12, 2020</td>
+                <td *ngIf="rtype=='edit'">11,000.00</td>
             </tr>
             <tr class="even">
                 <td>October 2020</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
             <tr>
                 <td>November 2020</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
             <tr class="even">
                 <td>December 2020</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
             <tr>
                 <td>January 2021</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
             <tr class="even">
                 <td>February 2021</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
             <tr>
                 <td>March 2021</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
             <tr class="even">
                 <td>April 2021</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
             <tr>
                 <td>May 2021</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
             <tr class="even">
                 <td>June 2021</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
             <tr>
                 <td>July 2021</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
             <tr class="even">
                 <td>August 2021</td>
-                <td>100.00</td>
-                <td>Not Deducted</td>
-                <td></td>
+                <td>1,000.00</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
+                <td *ngIf="rtype=='edit'">--</td>
             </tr>
         </tbody>
     </table>

@@ -23,7 +23,10 @@
                 <span>Loans</span>
             </a>
             <ul>
-                <li><a title="Loans" [routerLink]="['transaction/loan/list']">List</a></li>
+                <!-- <li><a title="Loans" [routerLink]="['transaction/loan/list']">List</a></li> -->
+                <li><a title="Loans" [routerLink]="['transaction/loan/approve']">Approve Loans</a></li>
+                <li><a title="Loans" [routerLink]="['transaction/task/billing']">Generate Billing Statement</a></li>
+                <li><a title="Loans" [routerLink]="['transaction/task/remittance']">Import Remittance File</a></li>
             </ul>
         </li>
         <li>
@@ -51,7 +54,7 @@
             <ul>
                 <li><a title="Accounts" [routerLink]="['setup/account']" class="sp-navbar-link">Accounts</a></li>
                 <li><a title="Accounts" [routerLink]="['setup/loc']" class="sp-navbar-link">Locations</a></li>
-                <li><a title="Accounts" [routerLink]="['setup/dept']" class="sp-navbar-link">Departments</a></li>
+                <li><a title="Accounts" [routerLink]="['setup/dept']" class="sp-navbar-link">Offices</a></li>
                 <li><a title="Accounts" [routerLink]="['setup/user']" class="sp-navbar-link">Users</a></li>
                 <li><a title="Accounts" [routerLink]="['setup/role']" class="sp-navbar-link">Roles</a></li>
                 <li><div class="sp-navbar-menu-sep"></div></li>

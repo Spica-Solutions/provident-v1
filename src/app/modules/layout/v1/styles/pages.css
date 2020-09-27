@@ -46,6 +46,11 @@
     padding: 8px 16px;
     /* color: #000; */
 }
+.sp-page-col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
 @media screen and (max-width: 900px) {
     .sp-page-content {
         display: grid;
@@ -63,7 +68,7 @@
     }
 }
 .sp-page-content-list {
-    margin: 12px 0;
+    margin: 24px 0;
 }
 /* @media screen and (min-width: 1601px) {
     .sp-page-content {
@@ -76,6 +81,9 @@
     display: flex;
     flex-flow: column;
     gap: 24px;
+}
+.sp-page-results-container {
+    margin-top: 12px;
 }
 .sp-page-footer {
     border-top: 1px solid #EEEEEE;
