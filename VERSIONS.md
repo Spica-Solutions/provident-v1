@@ -49,3 +49,7 @@
         pages.css
         tables.css
 
+0.1.3 - Sep 29 2020
+- Implemented reactive control:
+    field-text
+

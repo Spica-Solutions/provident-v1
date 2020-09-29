@@ -9,6 +9,10 @@
         </div>
     </div>
 
+    <div class="sp-page-header" *ngIf="fetchDone != true">
+        <sp-progress-slider></sp-progress-slider>
+    </div>
+
     <div class="sp-page-content-list">
         <table class="sp-table sp-table-actionable">
             <thead>
@@ -22,58 +26,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Villarama, Marlon</td>
-                    <td>CTO</td>
-                    <td>marlonsvillarama.biz@gmail.com</td>
-                    <td>0917 522 2847</td>
-                    <td>Jul 7, 1978</td>
+                <tr *ngFor="let member of members">
+                    <td>{{ member.lastname | titlecase }}, {{ member.firstname | titlecase }}</td>
+                    <td>{{ member.title }}</td>
+                    <td>{{ member.email }}</td>
+                    <td>{{ member.mobilephone }}</td>
+                    <td>{{ member.mobilephone }}</td>
                     <td>
                         <button type="button"
                             class="btn-action"
-                            (click)="showEditEmp(123)">View</button>
-                        <button type="button"
-                            class="btn-action">Delete</button>
-                    </td>
-                </tr>
-                <tr class="even">
-                    <td>Villarama, Marielle</td>
-                    <td>VP for Training</td>
-                    <td>marielle.villarama@gmail.com</td>
-                    <td>0905 256 1623</td>
-                    <td>Sep 23, 1998</td>
-                    <td>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="showEditEmp(456)">View</button>
-                        <button type="button"
-                            class="btn-action">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Villarama, Apple</td>
-                    <td>VP for Sales</td>
-                    <td>apple.linson02@yahoo.com</td>
-                    <td>0917 709 9588</td>
-                    <td>Sep 2, 1985</td>
-                    <td>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="showEditEmp(123)">View</button>
-                        <button type="button"
-                            class="btn-action">Delete</button>
-                    </td>
-                </tr>
-                <tr class="even">
-                    <td>Villarama, Violy</td>
-                    <td>CEO</td>
-                    <td>violy_villarama@yahoo.com</td>
-                    <td>0928 410 2732</td>
-                    <td>Sep 2, 1955</td>
-                    <td>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="showEditEmp(456)">View</button>
+                            (click)="showEditEmp(member._id)">View</button>
                         <button type="button"
                             class="btn-action">Delete</button>
                     </td>

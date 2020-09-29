@@ -4,187 +4,185 @@
     <button type="button" class="sp-form-btn" (click)="gotoList()">List</button>
 </div>
 
-<div class="sp-page-content">
-    <div class="sp-page-content-col">
-        <div class="sp-card">
-            <div class="sp-card-header">Personal Info</div>
-            <div class="sp-card-content">
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="First Name"
-                        className="sp-form-fld-name"
-                        ngModel name="firstname">
-                    </sp-field-text>
-                    <sp-field-text
-                        label="M.I."
-                        className="sp-form-fld-initial"
-                        ngModel name="middlename">
-                    </sp-field-text>
-                    <sp-field-text
-                        label="Last Name"
-                        className="sp-form-fld-name"
-                        ngModel name="lastname">
-                    </sp-field-text>
+<form [formGroup]="memberForm" (ngSubmit)="onSubmit()">
+    <div class="sp-page-content">
+        <div class="sp-page-content-col">
+            <div class="sp-card">
+                <div class="sp-card-header">Personal Info</div>
+                <div class="sp-card-content">
+                    <div class="sp-form-row">
+                        <!-- <input type="text" name="firstname" formControlName="firstname"> -->
+                        <sp-field-text
+                            label="First Name"
+                            className="sp-form-fld-name"
+                            formControlName="firstname">
+                        </sp-field-text>
+                        <sp-field-text
+                            label="M.I."
+                            className="sp-form-fld-initial"
+                            formControlName="middlename">
+                        </sp-field-text>
+                        <sp-field-text
+                            label="Last Name"
+                            className="sp-form-fld-name"
+                            formControlName="lastname">
+                        </sp-field-text>
+                    </div>
+                    <div class="sp-form-row">
+                        <sp-field-text
+                            label="Date of Birth"
+                            className="sp-form-fld-date"
+                            formControlName="dob">
+                        </sp-field-text>
+                    </div>
+                    <div class="sp-form-row">
+                        <sp-field-text
+                            label="Email Address"
+                            className="sp-form-fld-email"
+                            formControlName="email">
+                        </sp-field-text>
+                    </div>
+                    <div class="sp-form-row">
+                        <sp-field-text
+                            label="Mobile Number"
+                            className="sp-form-fld-phone"
+                            formControlName="mobilephone">
+                        </sp-field-text>
+                        <sp-field-text
+                            label="Home Number"
+                            className="sp-form-fld-phone"
+                            formControlName="homephone">
+                        </sp-field-text>
+                    </div>
                 </div>
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Date of Birth"
-                        className="sp-form-fld-date"
-                        ngModel name="dob">
-                    </sp-field-text>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Email Address"
-                        className="sp-form-fld-email"
-                        ngModel name="email">
-                    </sp-field-text>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Mobile Number"
-                        className="sp-form-fld-phone"
-                        ngModel name="mobilephone">
-                    </sp-field-text>
-                    <sp-field-text
-                        label="Home Number"
-                        className="sp-form-fld-phone"
-                        ngModel name="mobilephone">
-                    </sp-field-text>
+            </div>
+            <div class="sp-card">
+                <div class="sp-card-header">Employment Details</div>
+                <div class="sp-card-content">
+                    <div class="sp-form-row">
+                        <sp-field-text
+                            label="Member Number"
+                            className="sp-form-fld-phone"
+                            formControlName="empid">
+                        </sp-field-text>
+                    </div>
+                    <div class="sp-form-row">
+                        <sp-field-text
+                            label="Position/Title"
+                            className="sp-form-fld-email"
+                            formControlName="title">
+                        </sp-field-text>
+                        <!-- <sp-field-text-view
+                            label="Salary"
+                            text=""
+                            className="sp-form-fld-phone"
+                            formControlName="salary">
+                        </sp-field-text-view> -->
+                    </div>
+                    <!-- <div class="sp-form-row">
+                        <sp-field-select
+                            label="Location"
+                            type="location"
+                            className="sp-form-fld-email"
+                            formControlName="location">
+                        </sp-field-select>
+                    </div>
+                    <div class="sp-form-row">
+                        <sp-field-select
+                            label="Office"
+                            type="office"
+                            className="sp-form-fld-email"
+                            formControlName="branch">
+                        </sp-field-select>
+                    </div> -->
+                    <div class="sp-form-row">
+                        <sp-field-text
+                            label="Member Since"
+                            className="sp-form-fld-date"
+                            formControlName="membersince">
+                        </sp-field-text>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="sp-card">
-            <div class="sp-card-header">Employment Details</div>
-            <div class="sp-card-content">
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Member Number"
-                        className="sp-form-fld-phone"
-                        ngModel name="empnum">
-                    </sp-field-text>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Position/Title"
-                        className="sp-form-fld-email"
-                        ngModel name="title">
-                    </sp-field-text>
-                    <sp-field-text
-                        label="Salary"
-                        className="sp-form-fld-phone"
-                        ngModel name="salary">
-                    </sp-field-text>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-select
-                        label="Location"
-                        type="location"
-                        className="sp-form-fld-email"
-                        ngModel name="location">
-                    </sp-field-select>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-select
-                        label="Office/Department"
-                        type="office"
-                        className="sp-form-fld-email"
-                        ngModel name="branch">
-                    </sp-field-select>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-select
-                        label="Office"
-                        type="office"
-                        className="sp-form-fld-email"
-                        ngModel name="branch">
-                    </sp-field-select>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Member Since"
-                        className="sp-form-fld-date"
-                        ngModel name="empnum">
-                    </sp-field-text>
+    
+        <div class="sp-page-content-col">
+            <div class="sp-card">
+                <div class="sp-card-header">Bank Details</div>
+                <div class="sp-card-content">
+                    <div class="sp-form-row">
+                        <sp-field-text
+                            label="Bank"
+                            className="sp-form-fld-email"
+                            formControlName="bankname">
+                        </sp-field-text>
+                    </div>
+                    <div class="sp-form-row">
+                        <sp-field-text
+                            label="Account Name"
+                            className="sp-form-fld-email"
+                            formControlName="accname">
+                        </sp-field-text>
+                    </div>
+                    <div class="sp-form-row">
+                        <sp-field-text
+                            label="Account Number"
+                            className="sp-form-fld-email"
+                            formControlName="accnum">
+                        </sp-field-text>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="sp-page-content-col">
-        <div class="sp-card">
-            <div class="sp-card-header">Bank Details</div>
-            <div class="sp-card-content">
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Bank"
-                        className="sp-form-fld-email"
-                        ngModel name="bankname">
-                    </sp-field-text>
+            <!-- <div class="sp-card">
+                <div class="sp-card-header">Settings</div>
+                <div class="sp-card-content">
+                    <div class="sp-form-row">
+                        <button type="button"
+                            class="sp-form-btn-minor"
+                            *ngIf="showChangePwd != true"
+                            (click)="showChangePassword(true)">
+                            <span>CHANGE PASSWORD</span>
+                        </button>
+                        <button type="button"
+                            class="sp-form-btn-minor"
+                            *ngIf="showChangePwd == true"
+                            (click)="showChangePassword(false)">
+                            <span>Submit new password</span>
+                        </button>
+                        <button type="button"
+                            class="sp-form-btn-minor"
+                            *ngIf="showChangePwd == true"
+                            (click)="showChangePassword(false)">
+                        <span>Cancel</span>
+                        </button>
+                    </div>
+                    <div class="sp-form-row" *ngIf="showChangePwd == true">
+                        <sp-field-text
+                            label="New Password"
+                            class="sp-form-fld-name"
+                            formControlName="pwd"
+                            hint="Must be at least 8 characters">
+                        </sp-field-text>
+                    </div>
+                    <div class="sp-form-row">
+                        <sp-field-checkbox
+                            label="Member is active"
+                            formControlName="isactive">
+                        </sp-field-checkbox>
+                    </div>
+                    <div class="sp-form-row">
+                        <sp-field-checkbox
+                            label="Member has access"
+                            formControlName="hasaccess">
+                        </sp-field-checkbox>
+                    </div>
                 </div>
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Account Name"
-                        className="sp-form-fld-email"
-                        ngModel name="acctname">
-                    </sp-field-text>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Account Number"
-                        className="sp-form-fld-email"
-                        ngModel name="acctnum">
-                    </sp-field-text>
-                </div>
-            </div>
-        </div>
-        <div class="sp-card">
-            <div class="sp-card-header">Settings</div>
-            <div class="sp-card-content">
-                <div class="sp-form-row">
-                    <button type="button"
-                        class="sp-form-btn-minor"
-                        *ngIf="showChangePwd != true"
-                        (click)="showChangePassword(true)">
-                        <span>CHANGE PASSWORD</span>
-                    </button>
-                    <button type="button"
-                        class="sp-form-btn-minor"
-                        *ngIf="showChangePwd == true"
-                        (click)="showChangePassword(false)">
-                        <span>Submit new password</span>
-                    </button>
-                    <button type="button"
-                        class="sp-form-btn-minor"
-                        *ngIf="showChangePwd == true"
-                        (click)="showChangePassword(false)">
-                    <span>Cancel</span>
-                    </button>
-                </div>
-                <div class="sp-form-row" *ngIf="showChangePwd == true">
-                    <sp-field-text
-                        label="New Password"
-                        class="sp-form-fld-name"
-                        ngModel name="pwd"
-                        hint="Must be at least 8 characters">
-                    </sp-field-text>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-checkbox
-                        label="Member is active">
-                    </sp-field-checkbox>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-checkbox
-                        label="Member has access">
-                    </sp-field-checkbox>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
-</div>
-
-<div>
-    <button type="button" class="sp-form-btn-def">Save Changes</button>
-    <button type="button" class="sp-form-btn">Reset</button>
-</div>
+    
+    <div>
+        <button type="submit" [disabled]="memberForm.invalid" class="sp-form-btn-def">Save Changes</button>
+        <button type="button" class="sp-form-btn">Reset</button>
+    </div>
+</form>

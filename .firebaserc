@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "spica-groundzero": {
+      "hosting": {
+        "provident-v1": [
+          "spica-groundzero"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "nfa-provident"
+  }
+}

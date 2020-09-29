@@ -9,10 +9,22 @@ const routes: Routes = [
         component: MemberEditComponent,
         children: [
             { path: '', redirectTo: 'details', pathMatch: 'full' },
-            { path: 'details', loadChildren: async () => (await import('../member-edit-form/member-edit-form.module')).MemberEditFormModule },
-            { path: 'benefs', loadChildren: async () => (await import('../member-edit-beneficiaries/member-edit-beneficiaries.module')).MemberEditBeneficiariesModule },
-            { path: 'contribs', loadChildren: async () => (await import('../member-contribs/member-contribs.module')).MemberContribsModule },
-            { path: 'loans', loadChildren: async () => (await import('../member-loans/member-loans.module')).MemberLoansModule },
+            {
+                path: 'details',
+                loadChildren: async () => (await import('../member-edit-form/member-edit-form.module')).MemberEditFormModule
+            },
+            {
+                path: 'benefs',
+                loadChildren: async () => (await import('../member-edit-beneficiaries/member-edit-beneficiaries.module')).MemberEditBeneficiariesModule
+            },
+            {
+                path: 'contribs',
+                loadChildren: async () => (await import('../member-contribs/member-contribs.module')).MemberContribsModule
+            },
+            {
+                path: 'loans',
+                loadChildren: async () => (await import('../member-loans/member-loans.module')).MemberLoansModule
+            },
             // { path: 'ledger', loadChildren: async () => (await import('./member-edit-ledger/member-edit-ledger.module')).MemberEditLedgerModule },
         ]
     }

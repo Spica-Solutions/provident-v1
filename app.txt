@@ -1,0 +1,28 @@
+#runtime: nodejs10
+#
+#handlers:
+#- url: /
+#  static_files: provident-v1/index.html
+#  upload: provident-v1/index.html
+#- url: /
+#  static_dir: provident-v1
+runtime: python27
+api_version: 1
+threadsafe: true
+handlers:
+- url: /
+  static_files: provident-v1/index.html
+  upload: provident-v1/index.html
+- url: /
+  static_dir: provident-v1
+
+skip_files:
+  - e2e/
+  - node_modules/
+  - src/
+  - coverage
+  - ^(.*/)?\..*$
+  - ^(.*/)?.*\.json$
+  - ^(.*/)?.*\.md$
+  - ^(.*/)?.*\.yaml$
+  - ^LICENSE

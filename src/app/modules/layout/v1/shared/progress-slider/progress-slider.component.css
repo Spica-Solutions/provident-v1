@@ -1,0 +1,32 @@
+.sp-prog-slider {
+    position: relative;
+    width: 100vw;
+    height: 5px;
+    overflow-x: hidden;
+}
+.sp-prog-slider .line {
+    position: absolute;
+    opacity: 0.4;
+    background-color: #4a8df8;
+    width: 150%;
+    height: 5px;
+}
+.sp-prog-slider .subline {
+    position: absolute;
+    background: #4a8df8;
+    height: 5px;
+}
+.sp-prog-slider .inc {
+    animation: increase 2s infinite;
+}
+.sp-prog-slider .dec {
+    animation: decrease 2s infinite;
+}
+@keyframes increase {
+    from { left: -5%; width: 5% }
+    to { left: 130%; width: 100% }
+}
+@keyframes decrease {
+    from { left: -80%; width: 80% }
+    to { left: 110%; width: 10% }
+}

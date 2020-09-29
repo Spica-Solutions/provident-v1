@@ -1,10 +1,9 @@
 <div class="sp-field-wrapper">
-    <div class="sp-field-content">
+    <div class="sp-field-content" [formGroup]="fldTextForm">
         <input #input
             class="sp-field-text {{className}}"
             type="text"
-            [disabled]="disabled"
-            [placeholder]="placeHolder"
+            formControlName="inputFld"
             (input)="onChange($event.target.value)"
             (blur)="onTouched($event.target.value)">
         <label class="sp-field-label">{{ label }}</label>
