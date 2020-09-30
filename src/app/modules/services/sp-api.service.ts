@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { SpMetadataService } from './sp-metadata.service';
-// import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -14,7 +15,7 @@ export class SpApiService {
     fetchDoneChange: Subject<boolean> = new Subject<boolean>();
 
     constructor(
-        // private http: HttpClient,
+        private http: HttpClient,
         private svcMeta: SpMetadataService
     ) { }
 
@@ -27,7 +28,7 @@ export class SpApiService {
         return this.fetchDoneChange.asObservable();
     }
 
-    public find(type: string, locationSpecific: boolean, filters?: object) {
+    public find(type: string, locationSpecific: boolean, filters?: object): Observable<any> {
         let query = this.initQuery(locationSpecific);
 
         if (filters) {
@@ -38,50 +39,32 @@ export class SpApiService {
             }
         }
 
-        this.setFetchDone(false);
-        // return this.http.get(`${this.API_URL}/members?${query.join('&')}`);
-        fetch(`${this.API_URL}/${type}?${query.join('&')}`)
-            .then(res => {
-                console.log(res);
-                if(res.status !== 200) {
-                    console.log(res);
-                    return;
-                }
-
-                res.json().then(d => {
-                    console.log(d);
-                    this.svcMeta.setSearchResults(d);
-                })
-            })
-            .catch(err => {
-                console.log(err);
-            })
-            .finally(() => this.setFetchDone(true));
+        return this.http.get(`${this.API_URL}/members?${query.join('&')}`);
     }
 
     public get(type: string, id: string) {
         var url = `${this.API_URL}/${type}/${id}`;
         console.log(`get: ${url}`);
 
-        this.setFetchDone(false);
-        // return this.http.get(`${this.API_URL}/members?${query.join('&')}`);
-        fetch(url)
-            .then(res => {
-                console.log(res);
-                if(res.status !== 200) {
-                    console.log(res);
-                    return;
-                }
+        // this.setFetchDone(false);
+        return this.http.get(`${this.API_URL}/${type}/${id}`);
+        // fetch(url)
+        //     .then(res => {
+        //         console.log(res);
+        //         if(res.status !== 200) {
+        //             console.log(res);
+        //             return;
+        //         }
 
-                res.json().then(d => {
-                    console.log(d);
-                    this.svcMeta.setMember(res);
-                })
-            })
-            .catch(err => {
-                console.log(err);
-            })
-            .finally(() => this.setFetchDone(true));
+        //         res.json().then(d => {
+        //             console.log(d);
+        //             this.svcMeta.setMember(res);
+        //         })
+        //     })
+        //     .catch(err => {
+        //         console.log(err);
+        //     })
+        //     .finally(() => this.setFetchDone(true));
     }
 
     private initQuery(locationSpecific: boolean) {

@@ -1,11 +1,14 @@
 <div class="sp-field-wrapper">
-    <div class="sp-field-content">
+    <div class="sp-field-content" [formGroup]="fldForm">
         <label class="sp-field-cb-container">
             <span class="sp-field-cb-label">{{ label }}</span>
-            <input #input
+            <input
                 class="sp-field-cb"
                 type="checkbox"
-                checked>
+                formControlName="fld"
+                (check)="onChange($event.target.value)"
+                [disabled]="disabled"
+                checked="">
             <span class="sp-field-cb-check"></span>
         </label>
     </div>

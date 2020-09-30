@@ -1,4 +1,4 @@
-import { Component, ElementRef, forwardRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS, FormControl, FormGroup, Validator, Validators, AbstractControl, ValidationErrors, DefaultValueAccessor } from '@angular/forms';
 
 @Component({
@@ -23,78 +23,75 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS, FormControl, Fo
     ]
 })
 export class FieldTextComponent implements OnInit, ControlValueAccessor {
-    
-    // @ViewChild('input') input: ElementRef;
-    
-    // @Input() type = 'text';
+
     @Input() label: string = "Label";
     @Input() className: string = "";
     @Input() controlId: string = "";
     @Input() isRequired: boolean = false;
     @Input() isDisabled: boolean = false;
     @Input() maxLength: number = 80;
-    // @Input() parentForm: FormGroup;
-    // @Input() pattern: string = "";
-    // @Input() placeHolder: string = "";
-    // @Input() errorMsg: string = "";
     @Input() hint;
 
-    // disabled: boolean;
-    errorClass: string = "";
+    // errorClass: string = "";
     sHint:string = "";
-
-    public fldTextForm: FormGroup;
+    value: string = "";
+    disabled: boolean = false;
+    fldForm: FormGroup;
 
     constructor() { }
 
     ngOnInit(): void {
+        // console.log(`*** onInit > isRequired: ${this.isRequired}, isDisabled: ${this.isDisabled}`);
+
         this.sHint = this.isRequired == true ? "Required" : "";
         if (this.hint) {
             this.sHint = this.hint;
         }
-        console.log(`onInit: isRequired = ${this.isRequired}`);
-        this.fldTextForm = new FormGroup({
-            inputFld: new FormControl("",
+
+        this.fldForm = new FormGroup({
+            fld: new FormControl("",
                 this.isRequired == true ?
                     [Validators.required, Validators.maxLength(this.maxLength)] : null)
-        })
+        });
+
+        // this.isDisabled == true ? this.fldForm.get('fld').disable() : this.fldForm.get('fld').enable();
     }
 
     // ControlValueAccessor implem - START
-    writeValue(obj: any): void {
-        obj && this.fldTextForm.setValue(obj, { emitEvent: false });
+    writeValue(val: string): void {
+        // val && this.fldForm.get('fld').setValue(val, { emitEvent: false });
+        this.value = val ? val : '';
     }
 
     registerOnChange(fn: any): void {
-        // this.onChange = fn;
-        console.log('registerOnChange');
-        this.fldTextForm.valueChanges.subscribe(fn);
+        // this.fldForm.valueChanges.subscribe(fn);
+        this.onChange = fn;
     }
 
     registerOnTouched(fn: any): void {
-        console.log('registerOnTouched');
         this.onTouched = fn;
     }
 
     setDisabledState?(isDisabled: boolean): void {
-        isDisabled ? this.fldTextForm.disable() : this.fldTextForm.enable();
+        // isDisabled ? this.fldForm.disable() : this.fldForm.enable();
+        this.disabled = isDisabled;
     }
+    // ControlValueAccessor implem - END
 
     onChange(event) {
-        console.log(`onChange(${event})`);
+        // console.log(`onChange(${event})`);
     }
 
     onTouched(event) {
-        console.log(`onTouched(${event})`);
+        // console.log(`onTouched(${event})`);
         if (this.isRequired == true && !event) {
             console.log('empty');
         }
     }
-    // ControlValueAccessor implem - END
 
     validate(c: AbstractControl): ValidationErrors | null {
-        console.log("inputFld validation", c);
-        return this.fldTextForm.valid ? null : { invalidForm: { valid : false, message: 'fldTextForm fields are invalid!' }};
+        // console.log("fld validation", c.value);
+        return this.fldForm.valid ? null : { invalidForm: { valid : false, message: 'fldForm fields are invalid!' }};
     }
 
 }

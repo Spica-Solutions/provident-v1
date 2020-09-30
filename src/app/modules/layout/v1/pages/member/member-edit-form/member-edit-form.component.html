@@ -10,49 +10,130 @@
             <div class="sp-card">
                 <div class="sp-card-header">Personal Info</div>
                 <div class="sp-card-content">
+
                     <div class="sp-form-row">
-                        <!-- <input type="text" name="firstname" formControlName="firstname"> -->
-                        <sp-field-text
-                            label="First Name"
-                            className="sp-form-fld-name"
-                            formControlName="firstname">
-                        </sp-field-text>
-                        <sp-field-text
-                            label="M.I."
-                            className="sp-form-fld-initial"
-                            formControlName="middlename">
-                        </sp-field-text>
-                        <sp-field-text
-                            label="Last Name"
-                            className="sp-form-fld-name"
-                            formControlName="lastname">
-                        </sp-field-text>
+                        
+                        <!-- FIRST NAME -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-name"
+                                    type="text"
+                                    maxlength="40"
+                                    required
+                                    formControlName="firstname">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">First Name</label>
+                            </div>
+                            <div class="sp-field-sub">
+                                <span class="sp-field-hint">Required (Max. 40 characters)</span>
+                            </div>
+                        </div>
+
+                        <!-- MIDDLE INITIAL -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-initial"
+                                    type="text"
+                                    maxlength="1"
+                                    formControlName="middlename">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">M.I.</label>
+                            </div>
+                            <div class="sp-field-sub">
+                                <span class="sp-field-hint">&nbsp;</span>
+                            </div>
+                        </div>
+
+                        <!-- LAST NAME -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-name"
+                                    type="text"
+                                    maxlength="40"
+                                    formControlName="lastname">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Last Name</label>
+                            </div>
+                            <div class="sp-field-sub">
+                                <span class="sp-field-hint">Required (Max. 40 characters)</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="sp-form-row">
+
+                        <!-- DATE OF BIRTH -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-date"
+                                    type="text"
+                                    formControlName="dob">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Date of Birth</label>
+                                <button type="button" class="sp-field-text-btn">
+                                    <i class="material-icons">calendar_today</i>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="sp-form-row">
-                        <sp-field-text
-                            label="Date of Birth"
-                            className="sp-form-fld-date"
-                            formControlName="dob">
-                        </sp-field-text>
+                        
+                        <!-- EMAIL ADDRESS -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-email"
+                                    type="text"
+                                    required
+                                    formControlName="email">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Email Address</label>
+                            </div>
+                            <div class="sp-field-sub">
+                                <span class="sp-field-hint">Required (Max. 80 characters)</span>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="sp-form-row">
-                        <sp-field-text
-                            label="Email Address"
-                            className="sp-form-fld-email"
-                            formControlName="email">
-                        </sp-field-text>
-                    </div>
-                    <div class="sp-form-row">
-                        <sp-field-text
-                            label="Mobile Number"
-                            className="sp-form-fld-phone"
-                            formControlName="mobilephone">
-                        </sp-field-text>
-                        <sp-field-text
-                            label="Home Number"
-                            className="sp-form-fld-phone"
-                            formControlName="homephone">
-                        </sp-field-text>
+
+                        <!-- MOBILE NUMBER -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-phone"
+                                    type="text"
+                                    formControlName="mobilephone">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Mobile Number</label>
+                            </div>
+                        </div>
+
+                        <!-- HOME NUMBER -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-phone"
+                                    type="text"
+                                    formControlName="homephone">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Home Number</label>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -60,47 +141,109 @@
                 <div class="sp-card-header">Employment Details</div>
                 <div class="sp-card-content">
                     <div class="sp-form-row">
-                        <sp-field-text
-                            label="Member Number"
-                            className="sp-form-fld-phone"
-                            formControlName="empid">
-                        </sp-field-text>
+
+                        <!-- EMPLOYEE NUMBER -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-phone"
+                                    type="text"
+                                    formControlName="empid">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Employee ID</label>
+                            </div>
+                            <div class="sp-field-sub">
+                                <span class="sp-field-hint">Required</span>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="sp-form-row">
-                        <sp-field-text
-                            label="Position/Title"
-                            className="sp-form-fld-email"
-                            formControlName="title">
-                        </sp-field-text>
-                        <!-- <sp-field-text-view
-                            label="Salary"
-                            text=""
-                            className="sp-form-fld-phone"
-                            formControlName="salary">
-                        </sp-field-text-view> -->
-                    </div>
-                    <!-- <div class="sp-form-row">
-                        <sp-field-select
-                            label="Location"
-                            type="location"
-                            className="sp-form-fld-email"
-                            formControlName="location">
-                        </sp-field-select>
+                        
+                        <!-- POSITION / TITLE -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-email"
+                                    type="text"
+                                    formControlName="title">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Position/Title</label>
+                            </div>
+                        </div>
+
+                        <!-- SALARY -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text-view sp-form-fld-phone"
+                                    type="text"
+                                    disabled="disabled"
+                                    formControlName="salary">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Salary</label>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="sp-form-row">
-                        <sp-field-select
-                            label="Office"
-                            type="office"
-                            className="sp-form-fld-email"
-                            formControlName="branch">
-                        </sp-field-select>
-                    </div> -->
+
+                        <!-- LOCATION -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <select
+                                    class="sp-field-select sp-form-fld-email"
+                                    formControlName="location">
+                                    <!-- (change)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                    <!-- <option *ngFor="let el of arr" [ngValue]="el.id">{{el.text}}</option> -->
+                                </select>
+                                <label class="sp-field-label">Location</label>
+                            </div>
+                            <!-- <div class="sp-field-sub">
+                                <span class="sp-field-hint">{{ sHint }}</span>
+                            </div> -->
+                        </div>
+
+                        <!-- OFFICE -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <select
+                                    class="sp-field-select sp-form-fld-email"
+                                    formControlName="office">
+                                    <!-- (change)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                    <!-- <option *ngFor="let el of arr" [ngValue]="el.id">{{el.text}}</option> -->
+                                </select>
+                                <label class="sp-field-label">Office</label>
+                            </div>
+                            <!-- <div class="sp-field-sub">
+                                <span class="sp-field-hint">{{ sHint }}</span>
+                            </div> -->
+                        </div>
+
+                    </div>
                     <div class="sp-form-row">
-                        <sp-field-text
-                            label="Member Since"
-                            className="sp-form-fld-date"
-                            formControlName="membersince">
-                        </sp-field-text>
+
+                        <!-- MEMBER SINCE -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-date"
+                                    type="text"
+                                    formControlName="membersince">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Position/Title</label>
+                                <button type="button" class="sp-field-text-btn">
+                                    <i class="material-icons">calendar_today</i>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -111,29 +254,56 @@
                 <div class="sp-card-header">Bank Details</div>
                 <div class="sp-card-content">
                     <div class="sp-form-row">
-                        <sp-field-text
-                            label="Bank"
-                            className="sp-form-fld-email"
-                            formControlName="bankname">
-                        </sp-field-text>
+
+                        <!-- BANK NAME -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-email"
+                                    type="text"
+                                    formControlName="bankname">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Bank Name</label>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="sp-form-row">
-                        <sp-field-text
-                            label="Account Name"
-                            className="sp-form-fld-email"
-                            formControlName="accname">
-                        </sp-field-text>
+
+                        <!-- ACCOUNT NAME -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-email"
+                                    type="text"
+                                    formControlName="accname">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Account Name</label>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="sp-form-row">
-                        <sp-field-text
-                            label="Account Number"
-                            className="sp-form-fld-email"
-                            formControlName="accnum">
-                        </sp-field-text>
+
+                        <!-- ACCOUNT NUMBER -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-email"
+                                    type="text"
+                                    formControlName="accnumber">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">Account Number</label>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <!-- <div class="sp-card">
+            <div class="sp-card">
                 <div class="sp-card-header">Settings</div>
                 <div class="sp-card-content">
                     <div class="sp-form-row">
@@ -157,27 +327,59 @@
                         </button>
                     </div>
                     <div class="sp-form-row" *ngIf="showChangePwd == true">
-                        <sp-field-text
-                            label="New Password"
-                            class="sp-form-fld-name"
-                            formControlName="pwd"
-                            hint="Must be at least 8 characters">
-                        </sp-field-text>
+
+                        <!-- NEW PASSWORD -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-name"
+                                    type="password"
+                                    formControlName="accnumber">
+                                    <!-- (input)="onChange($event.target.value)"
+                                    (blur)="onTouched($event.target.value)" -->
+                                <label class="sp-field-label">New Password</label>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="sp-form-row">
-                        <sp-field-checkbox
-                            label="Member is active"
-                            formControlName="isactive">
-                        </sp-field-checkbox>
+
+                        <!-- MEMBER IS ACTIVE -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <label class="sp-field-cb-container">
+                                    <span class="sp-field-cb-label">Member is active</span>
+                                    <input
+                                        class="sp-field-cb"
+                                        type="checkbox"
+                                        formControlName="isactive"
+                                        checked="">
+                                    <span class="sp-field-cb-check"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
                     </div>
                     <div class="sp-form-row">
-                        <sp-field-checkbox
-                            label="Member has access"
-                            formControlName="hasaccess">
-                        </sp-field-checkbox>
+
+                        <!-- MEMBER HAS ACCESS -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <label class="sp-field-cb-container">
+                                    <span class="sp-field-cb-label">Member has access</span>
+                                    <input
+                                        class="sp-field-cb"
+                                        type="checkbox"
+                                        formControlName="hasaccess"
+                                        checked="">
+                                    <span class="sp-field-cb-check"></span>
+                                </label>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
     

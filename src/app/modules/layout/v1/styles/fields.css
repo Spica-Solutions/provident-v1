@@ -28,3 +28,129 @@
     color: rgba(0, 0, 0, 0.8);
     padding-top: 3px;
 }
+
+/* TEXT - START */
+.sp-field-text {
+    padding: 1em 12px 0.5em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    font-size: inherit;
+    box-sizing: border-box;
+}
+.sp-field-text::placeholder {
+    color: #CCC;
+}
+.sp-field-text:focus {
+    outline: none;
+    border: 1px solid #1565C0;
+}
+.sp-field-text-btn {
+    border: 0px solid red;
+    color:#424242;
+    background-color: #FFFFFF;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    top: 8px;
+    right: 4px;
+    position: absolute;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+.sp-field-text-btn > i {
+    font-size: 16px;
+}
+.sp-field-text-btn:hover {
+    background-color: #EEEEEE;
+}
+/* TEXT - END */
+
+/* TEXT-VIEW - START */
+.sp-field-text-view {
+    padding: 10px 14px 0.5em;
+    border: 0px solid rgba(0, 0, 0, 0.1);
+    font-size: inherit;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+/* TEXT-VIEW - END */
+
+/* SELECT - START */
+.sp-field-select {
+    padding: 1em 12px 0.5em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    font-size: inherit;
+    box-sizing: border-box;
+}
+.sp-field-select:focus {
+    outline: none;
+    border: 1px solid #1565C0;
+}
+/* SELECT - END */
+
+/* CHECKBOX - START */
+.sp-field-cb-container {
+    display: block;
+    position: relative;
+    padding-left: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.sp-field-cb-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.sp-field-cb-label {
+    line-height: 24px;
+}
+.sp-field-cb-check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    border: 1px solid #B0BEC5;
+    background-color: #eeeeee;
+}
+
+.sp-field-cb-container:hover input ~.sp-field-cb-check {
+    background-color: #cccccc;
+}
+.sp-field-cb-container input:checked ~.sp-field-cb-check {
+    background-color: #1976D2;
+}
+.sp-field-cb-check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.sp-field-cb-container input:checked ~.sp-field-cb-check:after {
+    display: block;
+}
+.sp-field-cb-container .sp-field-cb-check:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.sp-field-cb-label {
+    font-size: inherit;
+    margin-left: 16px;
+}
+/* CHECKBOX - END */

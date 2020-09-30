@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FieldTextViewRoutingModule } from './field-text-view-routing.module';
 import { FieldTextViewComponent } from './field-text-view.component';
@@ -9,7 +10,8 @@ import { FieldTextViewComponent } from './field-text-view.component';
   declarations: [FieldTextViewComponent],
   imports: [
     CommonModule,
-    FieldTextViewRoutingModule
+    FieldTextViewRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
       FieldTextViewComponent

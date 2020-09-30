@@ -1,67 +1,8 @@
-/* .sp-field-text-wrapper {
-    font-size: 14px;
-    padding-top: 8px;
-    border: 0px solid green;
-}
-.sp-field-wrapper {
-    position: relative;
-    display: block;
-} */
 .sp-field-text-view {
     padding: 10px 14px 0.5em;
     border: 0px solid rgba(0, 0, 0, 0.1);
-    /* border-radius: 2px; */
     font-size: inherit;
     box-sizing: border-box;
     background-color: #FFFFFF;
     color: #000000;
-    /* width: 100%; */
 }
-/* .sp-field-text::placeholder {
-    color: #CCC;
-} */
-/* .sp-field-text-label {
-    position: absolute;
-    padding: 0 6px;
-    background-color: #FFFFFF;
-    top: -0.4em;
-    left: 0.6em;
-    font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: 500;
-    transition: transform .15s ease-in;
-} */
-/* .sp-field-text:focus {
-    outline: none;
-    border: 1px solid #1565C0;
-} */
-/* .sp-field-text-sub {
-    margin: 0 6px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8em;
-}
-.sp-field-text-hint {
-    color: rgba(0, 0, 0, 0.8);
-    padding-top: 3px;
-} */
-/* .sp-field-text-btn {
-    border: 0px solid red;
-    color:#424242;
-    background-color: #FFFFFF;
-    width: 28px;
-    height: 28px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    top: 8px;
-    right: 4px;
-    position: absolute;
-    cursor: pointer;
-    transition: background-color .2s;
-}
-.sp-field-text-btn > i {
-    font-size: 16px;
-}
-.sp-field-text-btn:hover {
-    background-color: #EEEEEE;
-} */

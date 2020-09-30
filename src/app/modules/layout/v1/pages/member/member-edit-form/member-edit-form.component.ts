@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { SpApiService } from 'src/app/modules/services/sp-api.service';
 import { SpMetadataService } from 'src/app/modules/services/sp-metadata.service';
 import { SpUiService } from 'src/app/modules/services/sp-ui.service';
-import { formatCurrency } from '@angular/common';
+import { map } from 'rxjs/operators';
 
 @Component({
     selector: 'sp-member-edit-form',
@@ -14,7 +14,8 @@ import { formatCurrency } from '@angular/common';
         './member-edit-form.component.css',
         '../../../styles/pages.css',
         '../../../styles/cards.css',
-        '../../../styles/forms.css'
+        '../../../styles/forms.css',
+        '../../../styles/fields.css'
     ]
 })
 export class MemberEditFormComponent implements OnInit {
@@ -22,8 +23,16 @@ export class MemberEditFormComponent implements OnInit {
     public memberForm: FormGroup;
 
     memId: string = '';
-    member:any;
-    subFetch: Subscription;
+    rec: any;
+    subRec: Subscription;
+    subMeta: Subscription;
+
+    rid: string;
+    paramsSub: Subscription;
+    rtype: string;
+    urlSub: Subscription;
+    // member:any;
+    // subFetch: Subscription;
 
     showChangePwd = false;
 
@@ -36,19 +45,20 @@ export class MemberEditFormComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        console.log('Edit-Form: onInit()');
         this.initForm();
-        this.getRecord();
-        
-        this.subFetch = this.svcMeta.onMemberChange().subscribe(d => {
-            if (d) {
-                console.log('Retrieving member info from meta...');
-                this.member = d;
-            }
-        })
+
+        console.log(this.svcMeta.member);
+        this.rec = this.svcMeta.member;
+
+        this.parseRouteData();
+        this.svcUI.changeActiveTab(this.rtype);
+        this.initFormValues();
     }
 
     ngOnDestroy(): void {
-        this.subFetch.unsubscribe();
+        // this.subMeta.unsubscribe();
+        // this.subRec.unsubscribe();
     }
 
     initForm() {
@@ -64,15 +74,15 @@ export class MemberEditFormComponent implements OnInit {
             empid: new FormControl(""),
             title: new FormControl(""),
             salary: new FormControl(""),
-            // 'location': new FormControl(null, Validators.required),
-            // 'office': new FormControl(null, Validators.required),
+            location: new FormControl(""),
+            office: new FormControl(""),
             membersince: new FormControl(""),
             bankname: new FormControl(),
             accname: new FormControl(),
-            accnum: new FormControl(),
-            pwd: new FormControl()
-            // 'isactive': new FormControl(),
-            // 'hasaccess': new FormControl()
+            accnumber: new FormControl(),
+            pwd: new FormControl(),
+            isactive: new FormControl(),
+            hasaccess: new FormControl()
         });
     }
 
@@ -88,15 +98,54 @@ export class MemberEditFormComponent implements OnInit {
     }
 
     initFormValues(): void {
+        console.log('initFormValues');
+        console.log(this.rec);
         this.memberForm.setValue({
-            firstname: this.member.firstname,
-            middlename: this.member.middlename,
-            lastname: this.member.lastname
-        })
+            firstname: this.rec.firstname,
+            middlename: this.rec.middlename[0],
+            lastname: this.rec.lastname,
+            dob: this.formatDate(this.rec.dob),
+            email: this.rec.email,
+            mobilephone: this.rec.mobilephone,
+            homephone: this.rec.homephone,
+            empid: this.rec.empid,
+            title: this.rec.title,
+            salary: this.rec.salary,
+            location: this.rec.location,
+            office: this.rec.office,
+            membersince: this.formatDate(this.rec.membersince),
+            bankname: this.rec.bankname,
+            accname: this.rec.accname,
+            accnumber: this.rec.accnumber,
+            pwd: this.rec.pwd,
+            isactive: this.rec.isactive,
+            hasaccess: this.rec.hasaccess
+        });
+    }
+
+    formatDate(str): string {
+        const dt = new Date(str);
+        return `${(dt.getMonth()+1).toString()}/${dt.getDate()}/${dt.getFullYear()}`;
     }
 
     showChangePassword(show): void {
         this.showChangePwd = show;
+    }
+
+    parseRouteData(): void {
+        this.paramsSub = this.route.queryParams.subscribe(p => {
+            this.rid = p['id'] || '';
+            if (this.rid) {
+                this.rid = this.rid.trim();
+            }
+            console.log(`rid: '${this.rid}'`);
+        });
+        this.urlSub = this.route.parent.url.subscribe(u => {
+            console.log({ u });
+            this.rtype = u[u.length - 1].path;
+            console.log(`rtype: ${this.rtype}`);
+        });
+        console.log({ rid: this.rid, rtype: this.rtype });
     }
 
     gotoList(): void {

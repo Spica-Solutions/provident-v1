@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FieldSelectRoutingModule } from './field-select-routing.module';
 import { FieldSelectComponent } from './field-select.component';
@@ -9,7 +10,8 @@ import { FieldSelectComponent } from './field-select.component';
   declarations: [FieldSelectComponent],
   imports: [
     CommonModule,
-    FieldSelectRoutingModule
+    FieldSelectRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
       FieldSelectComponent

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FieldCheckboxRoutingModule } from './field-checkbox-routing.module';
 import { FieldCheckboxComponent } from './field-checkbox.component';
@@ -9,7 +10,8 @@ import { FieldCheckboxComponent } from './field-checkbox.component';
   declarations: [FieldCheckboxComponent],
   imports: [
     CommonModule,
-    FieldCheckboxRoutingModule
+    FieldCheckboxRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
       FieldCheckboxComponent

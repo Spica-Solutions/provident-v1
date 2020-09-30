@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SpUiService } from '../../../../../services/sp-ui.service';
 import { SpApiService } from '../../../../../services/sp-api.service';
 import { SpMetadataService } from 'src/app/modules/services/sp-metadata.service';
 import { Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
     selector: 'sp-member-list',
@@ -19,10 +21,11 @@ export class MemberListComponent implements OnInit {
     members = [];
     subMembers: Subscription;
 
-    fetchDone = true;
-    subFetchDone: Subscription;
+    // fetchDone = true;
+    // subFetchDone: Subscription;
 
     constructor(
+        private acRoute: ActivatedRoute,
         private svcApi: SpApiService,
         private svcMeta: SpMetadataService,
         private svcUI: SpUiService
@@ -30,20 +33,12 @@ export class MemberListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.svcApi.find('members', true);
-        
-        this.subFetchDone = this.svcApi.onFetchDoneChange().subscribe(d => {
-            console.log('subFetchDone');
-            console.log(d);
-            this.fetchDone = d;
-        })
-        
-        this.subMembers = this.svcMeta.onSearchResultsChange().subscribe(d => {
-            if (d) {
-                console.log('Retrieving member list from meta...');
-                this.members = d;
-            }
-        })
+        this.subMembers = this.acRoute.data.pipe(map((res) => {
+            return res.list;
+        })).subscribe((data) => {
+            console.log(data);
+            this.members = data;
+        });
     }
 
     ngOnDestroy(): void {

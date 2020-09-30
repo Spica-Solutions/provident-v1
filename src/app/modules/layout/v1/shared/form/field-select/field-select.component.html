@@ -1,14 +1,15 @@
 <div class="sp-field-wrapper">
-    <div class="sp-field-content">
-        <select #select
+    <div class="sp-field-content" [formGroup]="fldForm">
+        <select
             class="sp-field-select {{className}}"
+            formControlName="fld"
+            (change)="onChange($event.target.value)"
             (blur)="onTouched($event.target.value)">
-            <option *ngFor="let el of arr" [ngValue]="el">{{el.text}}</option>
+            <option *ngFor="let el of arr" [ngValue]="el.id">{{el.text}}</option>
         </select>
         <label class="sp-field-label">{{ label }}</label>
     </div>
     <div class="sp-field-sub">
         <span class="sp-field-hint">{{ sHint }}</span>
-        <!-- <span class="velo-form-input-hint">40</span> -->
     </div>
 </div>

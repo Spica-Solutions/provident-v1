@@ -15,6 +15,10 @@ export class SpUiService {
   
     recordId: string = "";
     recordIdChange: Subject<string> = new Subject<string>();
+
+    activeTab: string = "";
+    activeTabChanged: Subject<string> = new Subject<string>();
+    tabsTouched: string[] = [];
   
     constructor(
         private router: Router
@@ -67,6 +71,25 @@ export class SpUiService {
 
     onRecordIdChange(): Observable<any> {
         return this.recordIdChange.asObservable();
+    }
+    // Record Type - END
+
+    // Record Id - START
+    resetActiveTabs() {
+        this.tabsTouched = [];
+    }
+    
+    changeActiveTab(str) {
+        console.log(`  >> changeActiveTab('${str}')`);
+        this.activeTab = str;
+        if (this.tabsTouched.indexOf(this.activeTab) < 0) {
+            this.tabsTouched.push(this.activeTab);
+        }
+        this.activeTabChanged.next(this.activeTab);
+    }
+
+    onActiveTabChanged(): Observable<any> {
+        return this.activeTabChanged.asObservable();
     }
     // Record Type - END
 }

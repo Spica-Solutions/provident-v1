@@ -53,3 +53,11 @@
 - Converted the following control to reactive: field-text
     Implemented partly for member-edit-form
 
+0.1.4 - Sep 30 2020
+- Implemented reactive child components
+    field-text
+    field-select
+    field-checkbox
+    field-text-view
+- Discarded reactive child components for now (can't seem to make them work...) :(
+

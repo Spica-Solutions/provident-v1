@@ -34,6 +34,7 @@ export class SpMetadataService {
     setMember(res) {
         console.log('meta: setMember');
         this.member = res;
+        console.log(this.member);
         this.memberChange.next(this.member);
     }
 

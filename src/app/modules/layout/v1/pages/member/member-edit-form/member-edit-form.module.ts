@@ -6,6 +6,7 @@ import { MemberEditFormRoutingModule } from './member-edit-form-routing.module';
 import { MemberEditFormComponent } from './member-edit-form.component';
 
 import { FieldTextModule } from '../../../shared/form/field-text/field-text.module';
+import { FieldTextViewModule } from '../../../shared/form/field-text-view/field-text-view.module';
 import { FieldSelectModule } from '../../../shared/form/field-select/field-select.module';
 import { FieldCheckboxModule } from '../../../shared/form/field-checkbox/field-checkbox.module';
 
@@ -18,6 +19,7 @@ import { FieldCheckboxModule } from '../../../shared/form/field-checkbox/field-c
         MemberEditFormRoutingModule,
 
         FieldTextModule,
+        FieldTextViewModule,
         FieldSelectModule,
         FieldCheckboxModule
     ],
