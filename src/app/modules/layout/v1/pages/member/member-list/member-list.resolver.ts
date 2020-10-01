@@ -13,6 +13,6 @@ export class MemberListResolver implements Resolve<any> {
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
         console.log('resolving member-list...');
-        return this.svcApi.find('members', true);
+        return this.svcApi.find('members', false);
     }
 }

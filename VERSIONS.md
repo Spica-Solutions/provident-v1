@@ -61,3 +61,8 @@
     field-text-view
 - Discarded reactive child components for now (can't seem to make them work...) :(
 
+0.1.5 - Oct 1 2020
+- Implemented the following Member API calls:
+    list
+    create
+    update (not yet finished)

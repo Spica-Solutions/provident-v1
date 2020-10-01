@@ -52,7 +52,7 @@ export class MemberEditComponent implements OnInit {
             
             this.svcMeta.setMember(this.rec);
         });
-
+        
         this.subUI = this.svcUI.onActiveTabChanged().subscribe((tab) => {
             console.log(`  >> Changed tab: ${tab}`);
             if (this.tabsTouched.indexOf(tab) < 0) {
@@ -60,11 +60,6 @@ export class MemberEditComponent implements OnInit {
             }
             console.log(this.tabsTouched);
         });
-        // this.subMeta = this.svcMeta.onMemberChange().subscribe((rec) => {
-        //     // this.initFormValues(rec);
-        //     console.log('Edit: subscribed to meta...');            
-        //     this.membername = `${rec.lastname}, ${rec.firstname}`;
-        // });
     }
 
     ngOnDestroy(): void {
@@ -72,12 +67,14 @@ export class MemberEditComponent implements OnInit {
         this.subUI.unsubscribe();
     }
 
-    onSubmit() {
-        console.log('onSubmit', this.memberForm.value);
-    }
+    // onSubmit() {
+    //     console.log('onSubmit', this.memberForm.value);
+    // }
 
     gotoList(): void {
-        this.svcUI.navTo('/v1/member/list');
+        if (confirm('You may lose any unsaved changes. Continue?')) {
+            this.svcUI.navTo('/v1/member/list');
+        }
     }
 
     showChangePassword(show): void {

@@ -6,6 +6,9 @@
             <button type="button" class="sp-form-btn">History</button> -->
         </div>
         <div>
+            <!-- <button type="button" [disabled]="submitting == true" class="sp-form-btn-def" (click)="onSubmit()">Save Changes</button> -->
+            <!-- <button type="button" class="sp-form-btn"
+                (click)="gotoList()">Members List</button> -->
             <!-- <button type="button" class="sp-form-btn-def">Create this Member</button>
             <button type="button" class="sp-form-btn">Delete this Member</button> -->
         </div>
@@ -44,6 +47,7 @@
         <div>
         </div>
         <div>
+            <button type="button" [disabled]="memberForm.invalid" class="sp-form-btn-def" (click)="onSubmit()">Save Changes</button>
             <button type="button" class="sp-form-btn">Delete this Member</button>
         </div>
     </div> -->

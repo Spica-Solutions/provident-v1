@@ -39,15 +39,17 @@ export class SpApiService {
             }
         }
 
-        return this.http.get(`${this.API_URL}/members?${query.join('&')}`);
+        const url = `${this.API_URL}/members/find?${query.join('&')}`;
+        console.log(`find url: ${url}`);
+        return this.http.get(url);
     }
 
     public get(type: string, id: string) {
-        var url = `${this.API_URL}/${type}/${id}`;
+        const url = `${this.API_URL}/${type}/${id}`;
         console.log(`get: ${url}`);
 
         // this.setFetchDone(false);
-        return this.http.get(`${this.API_URL}/${type}/${id}`);
+        return this.http.get(url);
         // fetch(url)
         //     .then(res => {
         //         console.log(res);
@@ -65,6 +67,13 @@ export class SpApiService {
         //         console.log(err);
         //     })
         //     .finally(() => this.setFetchDone(true));
+    }
+
+    public update(rtype: string, op: string, obj: any, id:string) {
+        const url = `${this.API_URL}/${rtype}/${op}?id=${id}`;
+        console.log(`update url: ${url}`);
+        console.log(obj);
+        return this.http.post(url, obj);
     }
 
     private initQuery(locationSpecific: boolean) {

@@ -20,8 +20,6 @@ import { map } from 'rxjs/operators';
 })
 export class MemberEditFormComponent implements OnInit {
 
-    public memberForm: FormGroup;
-
     memId: string = '';
     rec: any;
     subRec: Subscription;
@@ -31,10 +29,13 @@ export class MemberEditFormComponent implements OnInit {
     paramsSub: Subscription;
     rtype: string;
     urlSub: Subscription;
+    updateSub: Subscription;
     // member:any;
     // subFetch: Subscription;
 
+    memberForm: FormGroup;
     showChangePwd = false;
+    submitting = false;
 
     constructor(
         private route: ActivatedRoute,
@@ -52,13 +53,24 @@ export class MemberEditFormComponent implements OnInit {
         this.rec = this.svcMeta.member;
 
         this.parseRouteData();
-        this.svcUI.changeActiveTab(this.rtype);
-        this.initFormValues();
+
+        if (this.rtype != 'new') {
+            this.svcUI.changeActiveTab(this.rtype);
+            this.initFormValues();
+        }
+
+        this.memberForm.valueChanges.subscribe(val => {
+
+        })
     }
 
     ngOnDestroy(): void {
-        // this.subMeta.unsubscribe();
-        // this.subRec.unsubscribe();
+        this.paramsSub.unsubscribe();
+        this.urlSub.unsubscribe();
+
+        if (this.updateSub) {
+            this.updateSub.unsubscribe();
+        }
     }
 
     initForm() {
@@ -86,23 +98,23 @@ export class MemberEditFormComponent implements OnInit {
         });
     }
 
-    getRecord(): void {
-        this.route.queryParams
-            .subscribe(params => {
-                this.memId = params.id;
+    // getRecord(): void {
+    //     this.route.queryParams
+    //         .subscribe(params => {
+    //             this.memId = params.id;
 
-                if (this.memId) {
-                    this.svcApi.get('members', this.memId);
-                }
-            });
-    }
+    //             if (this.memId) {
+    //                 this.svcApi.get('members', this.memId);
+    //             }
+    //         });
+    // }
 
     initFormValues(): void {
         console.log('initFormValues');
         console.log(this.rec);
         this.memberForm.setValue({
             firstname: this.rec.firstname,
-            middlename: this.rec.middlename[0],
+            middlename: this.rec.middlename,
             lastname: this.rec.lastname,
             dob: this.formatDate(this.rec.dob),
             email: this.rec.email,
@@ -155,7 +167,28 @@ export class MemberEditFormComponent implements OnInit {
     }
 
     onSubmit() {
+        this.submitting = true;
+        console.log(this.memberForm.value);
         console.log('onSubmit', this.memberForm.value);
+
+        var diffObj = this.svcMeta.diffObjects(this.rec, this.memberForm.value);
+        console.log({ diffObj });
+
+        if (diffObj) {
+            this.updateSub = this.svcApi.update(
+                'members',
+                (this.rtype == 'new' ? 'create' : 'update'),
+                (this.rtype == 'new' ? this.memberForm.value : diffObj),
+                (this.rtype == 'new' ? '' : this.rid)
+            ).subscribe((res) => {
+                console.log(res);
+                alert('Changes successfully saved!');
+                // this.svcMeta.setMember(this.memberForm.value);
+                // this.memberForm.reset(this.memberForm.value);
+                this.submitting = false;
+            });
+        }
+
     }
 
 }

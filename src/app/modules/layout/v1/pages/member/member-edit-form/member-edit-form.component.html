@@ -1,7 +1,13 @@
 <div>
-    <button type="button" class="sp-form-btn-def">Save Changes</button>
-    <!-- <button type="button" class="sp-form-btn">Reset</button> -->
-    <button type="button" class="sp-form-btn" (click)="gotoList()">List</button>
+    <span class="sp-form-status" *ngIf="submitting == true">Submitting...</span>
+    <button type="button"
+        *ngIf="submitting == false"
+        class="sp-form-btn-def"
+        (click)="onSubmit()">Submit Form</button>
+    <!-- <button type="button" class="sp-form-btn" (click)="memberForm.reset(memberForm.value)">Reset</button> -->
+    <button type="button" class="sp-form-btn"
+        *ngIf="rtype == 'new'"
+        (click)="gotoList()">Members List</button>
 </div>
 
 <form [formGroup]="memberForm" (ngSubmit)="onSubmit()">
@@ -22,8 +28,8 @@
                                     maxlength="40"
                                     required
                                     formControlName="firstname">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
+                                    <!-- (blur)="onTouched($event.target.value)" -->
+                                    <!-- (input)="onChange($event.target.value)" -->
                                 <label class="sp-field-label">First Name</label>
                             </div>
                             <div class="sp-field-sub">
@@ -237,7 +243,7 @@
                                     formControlName="membersince">
                                     <!-- (input)="onChange($event.target.value)"
                                     (blur)="onTouched($event.target.value)" -->
-                                <label class="sp-field-label">Position/Title</label>
+                                <label class="sp-field-label">Member Since</label>
                                 <button type="button" class="sp-field-text-btn">
                                     <i class="material-icons">calendar_today</i>
                                 </button>
@@ -384,7 +390,13 @@
     </div>
     
     <div>
-        <button type="submit" [disabled]="memberForm.invalid" class="sp-form-btn-def">Save Changes</button>
+        <button type="button"
+            [disabled]="submitting == true"
+            [ngClass]="{'sp-form-btn': submitting == true, 'sp-form-btn-def': submitting == false}"
+            (click)="onSubmit()">Submit Form</button>
         <button type="button" class="sp-form-btn">Reset</button>
+        <button type="button" class="sp-form-btn"
+            *ngIf="rtype == 'new'"
+            (click)="gotoList()">Members List</button>
     </div>
 </form>
