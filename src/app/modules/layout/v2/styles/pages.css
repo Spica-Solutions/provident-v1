@@ -1,0 +1,8 @@
+.sp-page-container {
+    padding: 24px 24px;
+}
+.sp-page-dash-left {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+}

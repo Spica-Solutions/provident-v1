@@ -1,0 +1,94 @@
+<div class="sp-page-container">
+    <div class="sp-card">
+        <div class="sp-card-banner">
+            <div class="sp-card-banner-header">
+                <i class="material-icons banner-icon">account_circle</i>
+                <div class="sp-card-banner-title">
+                    <div class="sp-card-banner-label">Setup > Users > List</div>
+                    <div class="sp-card-banner-text">Users</div>
+                </div>
+            </div>
+            <div class="sp-card-banner-actions">
+                <button type="button" class="sp-card-banner-action-btn fw500">Create New User</button>
+                <!-- <button type="button" class="sp-card-banner-action-btn fw500"
+                    (click)="gotoList()">Go to List</button> -->
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="sp-card-padding sp-card-flow-right">
+            <div class="sp-fld">
+                <div class="sp-fld-label">Name</div>
+                <div>
+                    <input type="text" class="sp-fld-text-input">
+                </div>
+            </div>
+            <div class="sp-fld">
+                <div class="sp-fld-label">Email Address</div>
+                <div>
+                    <input type="text" class="sp-fld-text-input">
+                </div>
+            </div>
+            <div class="sp-fld">
+                <div class="sp-fld-label">&nbsp;</div>
+                <div>
+                    <button type="button" class="sp-card-banner-action-btn fw500">Search</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sp-card-content sp-card-padding-sides sp-card-padding-bottom">
+            <table class="sp-list">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email Address</th>
+                        <th>Phone No.</th>
+                        <th class="sp-list-edit-col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sp-list-txt-col">Villarama, Violeta</td>
+                        <td class="sp-list-txt-col">violy_villarama@yahoo.com</td>
+                        <td class="sp-list-txt-col">0928-410-2732</td>
+                        <td class="sp-list-edit-col">
+                            <button type="button" class="sp-list-row-btn-def"
+                                (click)="viewRec(123)">View</button>
+                        </td>
+                    </tr>
+                    <tr class="even">
+                        <td class="sp-list-txt-col">Villarama, Marielle</td>
+                        <td class="sp-list-txt-col">marielle.villarama@gmail.com</td>
+                        <td class="sp-list-txt-col">0928-410-2732</td>
+                        <td class="sp-list-edit-col">
+                            <button type="button" class="sp-list-row-btn-def"
+                                (click)="viewRec(123)">View</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sp-list-txt-col">Dosunmu, Aisha</td>
+                        <td class="sp-list-txt-col">aisha@gmail.com</td>
+                        <td class="sp-list-txt-col">0911-020-3212</td>
+                        <td class="sp-list-edit-col">
+                            <button type="button" class="sp-list-row-btn-def"
+                                (click)="viewRec(123)">View</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="sp-card-padding sp-card-flow-right">
+            <div class="sp-fld">
+                <div class="sp-fld-label">Total Accumulated Value (TAV)</div>
+                <div class="sp-fld-banner-text fw700">1,000,000.00</div>
+            </div>
+            <div class="sp-fld">
+                <div class="sp-fld-label">Contributions</div>
+                <div class="sp-fld-banner-text fw700">304</div>
+            </div>
+        </div> -->
+        <!-- <img class="sp-card-pic" src="../../../../../../assets/ramon_001.png"> -->
+    </div>
+</div>

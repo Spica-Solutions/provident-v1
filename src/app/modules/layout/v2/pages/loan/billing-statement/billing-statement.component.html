@@ -1,0 +1,161 @@
+<div class="sp-page-container">
+    <div class="sp-card">
+
+        <div class="sp-card-banner">
+            <div class="sp-card-banner-header">
+                <i class="material-icons banner-icon">monetization_on</i>
+                <div class="sp-card-banner-title">
+                    <div class="sp-card-banner-label">Loans</div>
+                    <div class="sp-card-banner-text">Generate Billing Statement</div>
+                </div>
+            </div>
+            <div class="sp-card-banner-actions">
+                <!-- <button type="button" class="sp-card-banner-action-btn fw500">Members List</button> -->
+            </div>
+        </div>
+
+        <div class="sp-card-padding sp-card-flow-right">
+            <div class="sp-fld">
+                <div class="sp-fld-label">Location</div>
+                <div>
+                    <select name="location" class="sp-fld-select">
+                        <option>-- All --</option>
+                        <option>Central Office</option>
+                        <option>Region I - Ilocos</option>
+                        <option>Region II - Cagayan Valley</option>
+                    </select>
+                </div>
+            </div>
+            <div class="sp-fld">
+                <div class="sp-fld-label">Office</div>
+                <div>
+                    <select name="location" class="sp-fld-select">
+                        <option>-- All --</option>
+                        <option>Regional Office</option>
+                        <option>Region I - Ilocos Norte</option>
+                        <option>Region I - Pangasinan</option>
+                        <option>Region I - La Union</option>
+                    </select>
+                </div>
+            </div>
+            <div class="sp-fld">
+                <div class="sp-fld-label">&nbsp;</div>
+                <div>
+                    <button type="button" class="sp-card-banner-action-btn fw500">Search</button>
+                    <!-- <button type="button" class="sp-card-banner-action-btn fw500">Expand all</button>
+                    <button type="button" class="sp-card-banner-action-btn fw500">Collapse all</button> -->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sp-card-content sp-card-padding-sides sp-card-padding-bottom">
+            <table class="sp-list">
+                <thead>
+                    <tr>
+                        <th>Member Name</th>
+                        <th>Amount to Deduct</th>
+                        <th>Loans</th>
+                        <th class="sp-list-edit-col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sp-list-txt-col">Villarama, Violeta</td>
+                        <td class="sp-list-txt-col">6,250.00</td>
+                        <td class="sp-list-txt-col">5</td>
+                        <td class="sp-list-edit-col">
+                            <button type="button" class="sp-list-row-btn-def"
+                                (click)="expand(123)">Expand</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="sp-list-detail-line">
+                            <table class="sp-list-detail-table">
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Regular Loan</td>
+                                    <td>Aug 2020</td>
+                                    <td class="number">1,250.00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Regular Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number">2,500.00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Calamity Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number">1,500.00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Emergency Loan</td>
+                                    <td>Aug 2020</td>
+                                    <td class="number">500.00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Emergency Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number">500.00</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="even">
+                        <td class="sp-list-txt-col">Villarama, Marielle</td>
+                        <td class="sp-list-txt-col">5,000.00</td>
+                        <td class="sp-list-txt-col">1</td>
+                        <td class="sp-list-edit-col">
+                            <button type="button" class="sp-list-row-btn-def"
+                                (click)="expand(123)">Expand</button>
+                        </td>
+                    </tr>
+                    <tr class="even">
+                        <td colspan="4" class="sp-list-detail-line">
+                            <table class="sp-list-detail-table">
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Regular Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number">5,000.00</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sp-list-txt-col">Villarama, Marlene</td>
+                        <td class="sp-list-txt-col">8,000.00</td>
+                        <td class="sp-list-txt-col">2</td>
+                        <td class="sp-list-edit-col">
+                            <button type="button" class="sp-list-row-btn-def"
+                                (click)="expand(123)">Expand</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="sp-list-detail-line">
+                            <table class="sp-list-detail-table">
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Regular Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number">5,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Emergency Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number">3,000.00</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

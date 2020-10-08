@@ -1,0 +1,80 @@
+.sp-list {
+    width: 100%;
+    border: 0px solid red;
+}
+.sp-list thead {
+    /* border-top: 1px solid #BDBDBD; */
+    border-bottom: 1px solid #BDBDBD;
+}
+.sp-list th,
+.sp-list-txt-col {
+    text-align: left;
+    padding: 10px 6px;
+    font-size: 13px;
+}
+.sp-list th {
+    background-color: #E0E0E0;
+}
+.sp-list-txt-col {
+    font-size: 12px;
+}
+.sp-list tr {
+    transition: background-color .2s;
+}
+.sp-list tr.even {
+    background-color: #eeeeee;
+}
+.sp-list tr:hover {
+    background-color: #B2DFDB;
+}
+.sp-list-edit-col {
+    width: 50px;
+    border: 0px solid red;
+    padding: 10px 6px;
+}
+.sp-list-row-btn,
+.sp-list-row-btn-def {
+    font-size: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 0;
+    border-radius: 3px;
+    padding: 4px 8px;
+}
+.sp-list-row-btn-def {
+    background-color: #0288D1;
+    transition: background-color .2s;
+}
+.sp-list-row-btn-def:hover {
+    background-color: #01579B;
+}
+
+.sp-list-detail-line {
+    padding: 0 48px !important;
+}
+.sp-list-detail-table td {
+    padding: 6px 8px;
+    font-size: 12px;
+    line-height: 18px;
+    min-width: 70px;
+}
+.sp-list-detail-table td.desc {
+    min-width: 150px;
+}
+.sp-list-detail-table td.number {
+    text-align: end;
+}
+/* .sp-list-detail-table td:last-of-type {
+    text-align: end;
+}
+.sp-list-detail-table td:nth-last-of-type(2) {
+    text-align: end;
+} */
+.sp-list-detail-table td.strike {
+    text-decoration: line-through;
+}
+.sp-list-detail-table td.balance {
+    color: #FFFFFF;
+    font-weight: 500;
+    background-color: #FF0000;
+}

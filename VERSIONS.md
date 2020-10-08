@@ -66,3 +66,6 @@
     list
     create
     update (not yet finished)
+
+0.2.1 - Oct 8 2020
+- Started implementing v2 layout

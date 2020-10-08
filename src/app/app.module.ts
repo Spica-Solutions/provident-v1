@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -12,8 +11,10 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { SpApiService } from './modules/services/sp-api.service';
-import { MemberListResolver } from './modules/layout/v1/pages/member/member-list/member-list.resolver';
-import { MemberEditResolver } from './modules/layout/v1/pages/member/member-edit-form/member-edit-form.resolver';
+
+import { V1Resolver } from './modules/layout/v1/resolvers/v1-main.resolver';
+import { V1ListResolver } from './modules/layout/v1/resolvers/v1-list.resolver';
+import { V1RecordResolver } from './modules/layout/v1/resolvers/v1-record.resolver';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,9 @@ import { MemberEditResolver } from './modules/layout/v1/pages/member/member-edit
   providers: [
       SpApiService,
 
-      MemberListResolver,
-      MemberEditResolver
+      V1Resolver,
+      V1ListResolver,
+      V1RecordResolver
   ],
   bootstrap: [AppComponent]
 })

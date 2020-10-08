@@ -1,0 +1,68 @@
+<nav class="sp-navbar">
+    <ul class="sp-navbar-links">
+        <li>
+            <a title="Home" [routerLink]="['']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:false}">
+                <span>Home</span>
+            </a>
+        </li>
+        <li>
+            <a title="Members" [routerLink]="['member']" class="sp-navbar-link sp-navbar-link-active" routerLinkActive="active">
+                <!-- <i class="material-icons">calendar_today</i> -->
+                <span>Members</span>
+            </a>
+            <ul>
+                <li><a title="List" [routerLink]="['member/list']">List</a></li>
+                <!-- <li><a title="Edit" [routerLink]="['member/edit']">Edit</a></li> -->
+                <li><a title="New" [routerLink]="['member/new']">New</a></li>
+                <li><div class="sp-navbar-menu-sep"></div></li>
+                <li><a title="Import" [routerLink]="['member/import']">Import</a></li>
+                <li><a title="Member Portal" [routerLink]="['/portal']">Member Portal Sample</a></li>
+            </ul>
+        </li>
+        <li>
+            <a title="Loans" [routerLink]="['loan/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <span>Loans</span>
+            </a>
+            <ul>
+                <!-- <li><a title="Loans" [routerLink]="['transaction/loan/list']">List</a></li> -->
+                <li><a title="Loans" [routerLink]="['loan/approve']">Approve Loans</a></li>
+                <li><a title="Loans" [routerLink]="['loan/billingstatement']">Generate Billing Statement</a></li>
+                <li><a title="Loans" [routerLink]="['loan/importremittance']">Import Remittance File</a></li>
+            </ul>
+        </li>
+        <li>
+            <a title="Reports" [routerLink]="['report']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <span>Reports</span>
+                <!-- <i class="material-icons btn-icon">cached</i> -->
+            </a>
+            <ul>
+                <li><a title="Search" [routerLink]="['report/bookaccounts']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Book of Accounts</a></li>
+                <li><a title="Search" [routerLink]="['report/finstatement']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Financial Statement</a></li>
+                <li><a title="Search" [routerLink]="['report/genledger']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">General Ledger</a></li>
+                <li><a title="Search" [routerLink]="['report/fincondition']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Financial Condition</a></li>
+                <li><a title="Search" [routerLink]="['report/activities']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Statement of Activities</a></li>
+                <li><a title="Search" [routerLink]="['report/cashflows']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Statement of Cash Flows</a></li>
+                <li><a title="Search" [routerLink]="['report/equity']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Statement of Changes in Equity</a></li>
+                <li><a title="Search" [routerLink]="['report/cashposition']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Cash Position</a></li>
+                <li><a title="Search" [routerLink]="['report/pettycash']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Petty Cash Voucher</a></li>
+            </ul>
+        </li>
+        <li>
+            <a title="Setup" [routerLink]="['setup']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <!-- <i class="material-icons btn-icon">settings</i> -->
+                <span>Setup</span>
+            </a>
+            <ul>
+                <li><a title="Accounts" [routerLink]="['account']" class="sp-navbar-link">Accounts</a></li>
+                <li><a title="Locations" [routerLink]="['location']" class="sp-navbar-link">Locations</a></li>
+                <!-- <li><a title="Accounts" [routerLink]="['setup/dept']" class="sp-navbar-link">Offices</a></li> -->
+                <li><a title="Users" [routerLink]="['user']" class="sp-navbar-link">Users</a></li>
+                <li><a title="Roles" [routerLink]="['role']" class="sp-navbar-link">Roles</a></li>
+                <li><div class="sp-navbar-menu-sep"></div></li>
+                <li><a title="Accounts" [routerLink]="['setup/companysettings']" class="sp-navbar-link">Company Settings</a></li>
+            </ul>
+        </li>
+    </ul>
+    <!-- <ul class="sp-navbar-links">
+    </ul> -->
+</nav>

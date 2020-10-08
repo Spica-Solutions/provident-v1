@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { LocationsRoutingModule } from './locations-routing.module';
 import { LocationsComponent } from './locations.component';
 
@@ -12,6 +12,7 @@ import { FieldCheckboxModule } from '../../../shared/form/field-checkbox/field-c
     imports: [
         CommonModule,
         LocationsRoutingModule,
+        ReactiveFormsModule,
 
         FieldTextModule,
         FieldCheckboxModule

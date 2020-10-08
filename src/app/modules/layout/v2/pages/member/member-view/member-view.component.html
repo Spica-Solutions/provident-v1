@@ -1,0 +1,347 @@
+<div class="sp-page-container">
+    
+    <!-- MEMBER BANNER -->
+    <div class="sp-card">
+        <div class="sp-card-banner">
+            <div class="sp-card-banner-header">
+                <i class="material-icons banner-icon">face</i>
+                <div class="sp-card-banner-title">
+                    <div class="sp-card-banner-label">MEMBER</div>
+                    <div class="sp-card-banner-text">Villarama, Marlon Sanguir</div>
+                </div>
+            </div>
+            <div class="sp-card-banner-actions">
+                <button type="button" class="sp-card-banner-action-btn fw500"
+                    (click)="gotoList()">Members List</button>
+            </div>
+        </div>
+        <div class="sp-card-padding sp-card-flow-right">
+            <div class="sp-fld">
+                <div class="sp-fld-label">Total Accumulated Value (TAV)</div>
+                <div class="sp-fld-banner-text fw700">1,000,000.00</div>
+            </div>
+            <div class="sp-fld">
+                <div class="sp-fld-label">Contributions</div>
+                <div class="sp-fld-banner-text fw700">304</div>
+            </div>
+            <div class="sp-fld">
+                <div class="sp-fld-label">Member Since</div>
+                <div class="sp-fld-banner-text fw700">Jul 1, 1976</div>
+            </div>
+        </div>
+        <!-- <img class="sp-card-pic" src="../../../../../../assets/ramon_001.png"> -->
+    </div>
+
+    <!-- MEMBER DETAILS -->
+    <div class="sp-page-dash-left">
+
+        <!-- MAIN PANEL -->
+        <div class="sp-page-dash-col">
+
+            <!-- EMPLOYMENT DETAILS -->
+            <div class="sp-card sp-card-padding">
+                <div class="sp-card-header">
+                    <div>
+                        <!-- <i class="material-icons card-icon card-icon-orange">call</i> -->
+                        <span class="fw700">EMPLOYMENT DETAILS</span>
+                    </div>
+                    <button type="button" class="sp-card-header-btn"
+                        *ngIf="edit_empinfo != true"
+                        (click)="showEditEmpInfo(true);">Edit Employment Info</button>
+                    <button type="button" class="sp-card-header-btn"
+                        *ngIf="edit_empinfo == true"
+                        (click)="showEditEmpInfo(false);">Save Changes</button>
+                </div>
+                <div class="sp-card-flow-down"
+                    *ngIf="edit_empinfo != true">
+            
+                    <div class="sp-card-col-2">
+                        <div class="sp-fld">
+                            <div class="sp-fld-label">Location</div>
+                            <div class="sp-fld-text">Central Office - OAAFA</div>
+                        </div>
+            
+                        <div class="sp-fld">
+                            <div class="sp-fld-label">Title</div>
+                            <div class="sp-fld-text">Chief Grains Operations Officer - V</div>
+                        </div>
+                    </div>
+            
+                    <div class="sp-card-col-2">
+                        <div class="sp-fld">
+                            <div class="sp-fld-label">PF Role</div>
+                            <div class="sp-fld-text">Payroll Processor</div>
+                        </div>
+                        
+                        <div class="sp-fld">
+                            <div class="sp-fld-label">Salary</div>
+                            <div class="sp-fld-text">60,000.00</div>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <div class="sp-card-flow-down"
+                    *ngIf="edit_empinfo == true">
+            
+                    <div class="sp-card-col-2">
+                        <div class="sp-fld">
+                            <div class="sp-fld-label">Location</div>
+                            <div>
+                                <select class="sp-fld-select">
+                                    <option>--</option>
+                                    <option>Central Office</option>
+                                    <option>Region I - Ilocos</option>
+                                    <option>Region II - Cagayan Valley</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div class="sp-fld">
+                            <div class="sp-fld-label">Title</div>
+                            <div>
+                                <input type="text" class="sp-fld-text-input sp-fld-name">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="sp-card-col-2">
+                        <div class="sp-fld">
+                            <div class="sp-fld-label">Member Since</div>
+                            <div class="sp-fld-text">Jul 1 1976</div>
+                        </div>
+            
+                        <div class="sp-fld">
+                            <div class="sp-fld-label">Salary</div>
+                            <div class="sp-fld-text">60,000.00</div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            
+            <!-- LOAN HISTORY -->
+            <div class="sp-card sp-card-padding">
+                <div class="sp-card-header">
+                    <div>
+                        <!-- <i class="material-icons card-icon card-icon-orange">request_page</i> -->
+                        <span class="fw700">LOAN HISTORY</span>
+                    </div>
+                    <button type="button" class="sp-card-header-btn">Apply for Loan</button>
+                </div>
+                <div class="sp-card-content">
+                    <table class="sp-list">
+                        <thead>
+                            <tr>
+                                <th>Release Date</th>
+                                <th>Amount</th>
+                                <th>Terms</th>
+                                <th>Status</th>
+                                <th class="sp-list-edit-col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">50,000.00</td>
+                                <td class="sp-list-txt-col">32</td>
+                                <td class="sp-list-txt-col">Pending Approval</td>
+                                <td class="sp-list-edit-col">
+                                    <button type="button" class="sp-list-row-btn-def"
+                                        (click)="gotoLoan(123)">View</button>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">Jan 8, 2020</td>
+                                <td class="sp-list-txt-col">10,000.00</td>
+                                <td class="sp-list-txt-col">36</td>
+                                <td class="sp-list-txt-col">Released</td>
+                                <td class="sp-list-edit-col">
+                                    <button type="button" class="sp-list-row-btn-def"
+                                        (click)="gotoLoan(123)">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">Jul 8, 2017</td>
+                                <td class="sp-list-txt-col">10,000.00</td>
+                                <td class="sp-list-txt-col">36</td>
+                                <td class="sp-list-txt-col">Released</td>
+                                <td class="sp-list-edit-col">
+                                    <button type="button" class="sp-list-row-btn-def"
+                                        (click)="gotoLoan(123)">View</button>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">Jul 8, 2017</td>
+                                <td class="sp-list-txt-col">10,000.00</td>
+                                <td class="sp-list-txt-col">36</td>
+                                <td class="sp-list-txt-col">Released</td>
+                                <td class="sp-list-edit-col">
+                                    <button type="button" class="sp-list-row-btn-def"
+                                        (click)="gotoLoan(123)">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">Jul 8, 2017</td>
+                                <td class="sp-list-txt-col">10,000.00</td>
+                                <td class="sp-list-txt-col">36</td>
+                                <td class="sp-list-txt-col">Released</td>
+                                <td class="sp-list-edit-col">
+                                    <button type="button" class="sp-list-row-btn-def"
+                                        (click)="gotoLoan(123)">View</button>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">Jan 8, 2020</td>
+                                <td class="sp-list-txt-col">10,000.00</td>
+                                <td class="sp-list-txt-col">36</td>
+                                <td class="sp-list-txt-col">Released</td>
+                                <td class="sp-list-edit-col">
+                                    <button type="button" class="sp-list-row-btn-def"
+                                        (click)="gotoLoan(123)">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">Jul 8, 2017</td>
+                                <td class="sp-list-txt-col">10,000.00</td>
+                                <td class="sp-list-txt-col">36</td>
+                                <td class="sp-list-txt-col">Released</td>
+                                <td class="sp-list-edit-col">
+                                    <button type="button" class="sp-list-row-btn-def"
+                                        (click)="gotoLoan(123)">View</button>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">Jul 8, 2017</td>
+                                <td class="sp-list-txt-col">10,000.00</td>
+                                <td class="sp-list-txt-col">36</td>
+                                <td class="sp-list-txt-col">Released</td>
+                                <td class="sp-list-edit-col">
+                                    <button type="button" class="sp-list-row-btn-def"
+                                        (click)="gotoLoan(123)">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">Jul 8, 2017</td>
+                                <td class="sp-list-txt-col">10,000.00</td>
+                                <td class="sp-list-txt-col">36</td>
+                                <td class="sp-list-txt-col">Released</td>
+                                <td class="sp-list-edit-col">
+                                    <button type="button" class="sp-list-row-btn-def"
+                                        (click)="gotoLoan(123)">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="sp-page-dash-col">
+
+            <!-- CONTACT DETAILS -->
+            <div class="sp-card sp-card-padding">
+                <div class="sp-card-header">
+                    <div>
+                        <!-- <i class="material-icons card-icon card-icon-orange">call</i> -->
+                        <span class="fw700">CONTACT DETAILS</span>
+                    </div>
+                    <button type="button" class="sp-card-header-btn"
+                        *ngIf="edit_contact != true"
+                        (click)="showContactInfo(true)">Edit Contact Info</button>
+                    <button type="button" class="sp-card-header-btn"
+                        *ngIf="edit_contact == true"
+                        (click)="showContactInfo(false)">Save Changes</button>
+                </div>
+                <div class="sp-card-flow-down" *ngIf="edit_contact != true">
+
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Email Address</div>
+                        <div class="sp-fld-text">marlonsvillarama@gmail.com</div>
+                    </div>
+
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Mobile Phone</div>
+                        <div class="sp-fld-text">0917-522-2847</div>
+                    </div>
+
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Home Phone</div>
+                        <div class="sp-fld-text">8374-6964</div>
+                    </div>
+                
+                </div>
+                <div class="sp-card-flow-down" *ngIf="edit_contact == true">
+
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Email Address</div>
+                        <div>
+                            <input type="text" class="sp-fld-text-input sp-fld-email">
+                        </div>
+                    </div>
+
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Mobile Phone</div>
+                        <div>
+                            <input type="text" class="sp-fld-text-input sp-fld-phone">
+                        </div>
+                    </div>
+
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Home Phone</div>
+                        <div>
+                            <input type="text" class="sp-fld-text-input sp-fld-phone">
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+
+            <!-- BENEFICIARIES -->
+            <div class="sp-card sp-card-padding">
+                <div class="sp-card-header">
+                    <div>
+                        <!-- <i class="material-icons card-icon card-icon-orange">call</i> -->
+                        <span class="fw700">BENEFICIARIES</span>
+                    </div>
+                    <button type="button" class="sp-card-header-btn">Add Beneficiary</button>
+                </div>
+                <div class="sp-card-content">
+                    <table class="sp-list">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th class="sp-list-edit-col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sp-list-txt-col">Apple Villarama</td>
+                                <td class="sp-list-edit-col"><button type="button" class="sp-list-row-btn-def">Edit</button></td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">Marielle Villarama</td>
+                                <td class="sp-list-edit-col"><button type="button" class="sp-list-row-btn-def">Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">Nikkuk</td>
+                                <td class="sp-list-edit-col"><button type="button" class="sp-list-row-btn-def">Edit</button></td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">Aisha</td>
+                                <td class="sp-list-edit-col"><button type="button" class="sp-list-row-btn-def">Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">Julia Patrice</td>
+                                <td class="sp-list-edit-col"><button type="button" class="sp-list-row-btn-def">Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

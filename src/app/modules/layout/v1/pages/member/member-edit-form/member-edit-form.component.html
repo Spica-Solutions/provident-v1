@@ -10,7 +10,7 @@
         (click)="gotoList()">Members List</button>
 </div>
 
-<form [formGroup]="memberForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="memberForm">
     <div class="sp-page-content">
         <div class="sp-page-content-col">
             <div class="sp-card">
@@ -28,8 +28,6 @@
                                     maxlength="40"
                                     required
                                     formControlName="firstname">
-                                    <!-- (blur)="onTouched($event.target.value)" -->
-                                    <!-- (input)="onChange($event.target.value)" -->
                                 <label class="sp-field-label">First Name</label>
                             </div>
                             <div class="sp-field-sub">
@@ -45,8 +43,6 @@
                                     type="text"
                                     maxlength="1"
                                     formControlName="middlename">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">M.I.</label>
                             </div>
                             <div class="sp-field-sub">
@@ -62,8 +58,6 @@
                                     type="text"
                                     maxlength="40"
                                     formControlName="lastname">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Last Name</label>
                             </div>
                             <div class="sp-field-sub">
@@ -82,8 +76,6 @@
                                     class="sp-field-text sp-form-fld-date"
                                     type="text"
                                     formControlName="dob">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Date of Birth</label>
                                 <button type="button" class="sp-field-text-btn">
                                     <i class="material-icons">calendar_today</i>
@@ -102,8 +94,6 @@
                                     type="text"
                                     required
                                     formControlName="email">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Email Address</label>
                             </div>
                             <div class="sp-field-sub">
@@ -121,8 +111,6 @@
                                     class="sp-field-text sp-form-fld-phone"
                                     type="text"
                                     formControlName="mobilephone">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Mobile Number</label>
                             </div>
                         </div>
@@ -134,8 +122,6 @@
                                     class="sp-field-text sp-form-fld-phone"
                                     type="text"
                                     formControlName="homephone">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Home Number</label>
                             </div>
                         </div>
@@ -155,8 +141,6 @@
                                     class="sp-field-text sp-form-fld-phone"
                                     type="text"
                                     formControlName="empid">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Employee ID</label>
                             </div>
                             <div class="sp-field-sub">
@@ -174,8 +158,6 @@
                                     class="sp-field-text sp-form-fld-email"
                                     type="text"
                                     formControlName="title">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Position/Title</label>
                             </div>
                         </div>
@@ -188,8 +170,6 @@
                                     type="text"
                                     disabled="disabled"
                                     formControlName="salary">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Salary</label>
                             </div>
                         </div>
@@ -203,15 +183,10 @@
                                 <select
                                     class="sp-field-select sp-form-fld-email"
                                     formControlName="location">
-                                    <!-- (change)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
-                                    <!-- <option *ngFor="let el of arr" [ngValue]="el.id">{{el.text}}</option> -->
+                                    <option *ngFor="let e of globalLists['location']" [value]="e.order">{{e.text}}</option>
                                 </select>
                                 <label class="sp-field-label">Location</label>
                             </div>
-                            <!-- <div class="sp-field-sub">
-                                <span class="sp-field-hint">{{ sHint }}</span>
-                            </div> -->
                         </div>
 
                         <!-- OFFICE -->
@@ -220,15 +195,10 @@
                                 <select
                                     class="sp-field-select sp-form-fld-email"
                                     formControlName="office">
-                                    <!-- (change)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
-                                    <!-- <option *ngFor="let el of arr" [ngValue]="el.id">{{el.text}}</option> -->
+                                    <option *ngFor="let e of globalLists['office']" [value]="e.order">{{e.text}}</option>
                                 </select>
                                 <label class="sp-field-label">Office</label>
                             </div>
-                            <!-- <div class="sp-field-sub">
-                                <span class="sp-field-hint">{{ sHint }}</span>
-                            </div> -->
                         </div>
 
                     </div>
@@ -241,8 +211,6 @@
                                     class="sp-field-text sp-form-fld-date"
                                     type="text"
                                     formControlName="membersince">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Member Since</label>
                                 <button type="button" class="sp-field-text-btn">
                                     <i class="material-icons">calendar_today</i>
@@ -268,8 +236,6 @@
                                     class="sp-field-text sp-form-fld-email"
                                     type="text"
                                     formControlName="bankname">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Bank Name</label>
                             </div>
                         </div>
@@ -284,8 +250,6 @@
                                     class="sp-field-text sp-form-fld-email"
                                     type="text"
                                     formControlName="accname">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Account Name</label>
                             </div>
                         </div>
@@ -300,8 +264,6 @@
                                     class="sp-field-text sp-form-fld-email"
                                     type="text"
                                     formControlName="accnumber">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">Account Number</label>
                             </div>
                         </div>
@@ -341,8 +303,6 @@
                                     class="sp-field-text sp-form-fld-name"
                                     type="password"
                                     formControlName="accnumber">
-                                    <!-- (input)="onChange($event.target.value)"
-                                    (blur)="onTouched($event.target.value)" -->
                                 <label class="sp-field-label">New Password</label>
                             </div>
                         </div>
@@ -391,9 +351,12 @@
     
     <div>
         <button type="button"
-            [disabled]="submitting == true"
-            [ngClass]="{'sp-form-btn': submitting == true, 'sp-form-btn-def': submitting == false}"
+            *ngIf="submitting == false"
+            class="sp-form-btn-def"
             (click)="onSubmit()">Submit Form</button>
+            <!-- [disabled]="submitting == true"
+            [ngClass]="{'sp-form-btn': submitting == true, 'sp-form-btn-def': submitting == false}"
+            (click)="onSubmit()">Submit Form</button> -->
         <button type="button" class="sp-form-btn">Reset</button>
         <button type="button" class="sp-form-btn"
             *ngIf="rtype == 'new'"

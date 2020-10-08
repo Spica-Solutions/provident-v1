@@ -1,0 +1,50 @@
+.sp-fld {
+    display: flex;
+    flex-direction: column;
+}
+.sp-fld-label {
+    color: #616161;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+.sp-fld-banner-text,
+.sp-fld-text {
+    color: #212121;
+}
+.sp-fld-banner-text {
+    font-size: 16px;
+}
+.sp-banner-text {
+    font-size: 14px;
+}
+.sp-fld-text-input {
+    /* border: 0;
+    border-bottom: 1px solid #212121; */
+    /* background: transparent; */
+    /* outline: none; */
+    font-size: 13px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+.sp-fld-select {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+}
+.sp-fld-name {
+    width: 250px;
+}
+.sp-fld-email {
+    width: 350px;
+}
+.sp-fld-phone {
+    width: 130px;
+}
+.fw500 {
+    font-weight: 500;
+}
+
+.fw700 {
+    font-weight: 700;
+}

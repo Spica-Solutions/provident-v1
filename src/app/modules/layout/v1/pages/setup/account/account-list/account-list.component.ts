@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SpApiService } from 'src/app/modules/services/sp-api.service';
+import { SpMetadataService } from 'src/app/modules/services/sp-metadata.service';
 import { SpUiService } from 'src/app/modules/services/sp-ui.service';
+import { Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
     selector: 'sp-account-list',
@@ -14,12 +19,24 @@ import { SpUiService } from 'src/app/modules/services/sp-ui.service';
 export class AccountListComponent implements OnInit {
 
     pref: string = '/v1/setup/account/';
+    accounts = [];
+    subAccounts: Subscription;
 
     constructor(
+        private acRoute: ActivatedRoute,
+        private svcApi: SpApiService,
+        private svcMeta: SpMetadataService,
         private svcUI: SpUiService
-    ) { }
+    ) {
+    }
 
     ngOnInit(): void {
+        this.subAccounts = this.acRoute.data.pipe(map((res) => {
+            return res.list;
+        })).subscribe((data) => {
+            console.log(data);
+            this.accounts = data;
+        });
     }
 
     gotoNew(): void {
@@ -27,7 +44,7 @@ export class AccountListComponent implements OnInit {
     }
 
     gotoEdit(id): void {
-        this.svcUI.navTo(`${this.pref}edit`);
+        this.svcUI.navTo(`${this.pref}edit`, { id: id});
     }
 
     gotoRegister(id): void {

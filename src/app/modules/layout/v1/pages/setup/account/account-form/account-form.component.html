@@ -1,45 +1,114 @@
 <div>
-    <button type="button" class="sp-form-btn-def">Create Account</button>
+    <button type="button"
+        *ngIf="submitting == false"
+        class="sp-form-btn-def"
+        (click)="onSubmit()">{{ submitBtnText }}</button>
+    <!-- class="sp-form-btn-def">Create Account</button> -->
     <!-- <button type="button" class="sp-form-btn"
         *ngIf="showMemInfo == true"
         (click)="toggleMemInfo(false)">Hide Member Info</button> -->
     <button type="button" class="sp-form-btn" (click)="gotoList()">Back to List</button>
 </div>
 
-<div class="sp-page-content">
-    <div class="sp-page-content-col">
-        <div class="sp-card">
-            <div class="sp-card-header">Account Details</div>
-            <div class="sp-card-content">
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Number"
-                        className="sp-form-fld-phone"
-                        ngModel name="accnum">
-                    </sp-field-text>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Name"
-                        className="sp-form-fld-email"
-                        ngModel name="accname">
-                    </sp-field-text>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-select
-                        label="Type"
-                        className="sp-form-fld-email"
-                        ngModel name="acctype">
-                    </sp-field-select>
-                </div>
-                <div class="sp-form-row">
-                    <sp-field-text
-                        label="Opening Balance"
-                        className="sp-form-fld-phone"
-                        ngModel name="balance">
-                    </sp-field-text>
+<form [formGroup]="editForm">
+    <div class="sp-page-content">
+        <div class="sp-page-content-col">
+            <div class="sp-card">
+                <div class="sp-card-header">Account Details</div>
+                <div class="sp-card-content">
+                    <div class="sp-form-row">
+
+                        <!-- ACCOUNT CODE -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-phone"
+                                    type="text"
+                                    maxlength="10"
+                                    required
+                                    formControlName="code">
+                                <label class="sp-field-label">Code</label>
+                            </div>
+                            <div class="sp-field-sub">
+                                <span class="sp-field-hint">Required (Max. 10 characters)</span>
+                            </div>
+                        </div>
+                        <!-- <sp-field-text
+                            label="Number"
+                            className="sp-form-fld-phone"
+                            ngModel name="accnum">
+                        </sp-field-text> -->
+
+                    </div>
+                    <div class="sp-form-row">
+
+                        <!-- ACCOUNT NAME -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <input
+                                    class="sp-field-text sp-form-fld-email"
+                                    type="text"
+                                    maxlength="80"
+                                    required
+                                    formControlName="name">
+                                <label class="sp-field-label">Account Name</label>
+                            </div>
+                            <div class="sp-field-sub">
+                                <span class="sp-field-hint">Required (Max. 80 characters)</span>
+                            </div>
+                        </div>
+
+                        <!-- <sp-field-text
+                            label="Name"
+                            className="sp-form-fld-email"
+                            ngModel name="accname">
+                        </sp-field-text> -->
+                    </div>
+                    <div class="sp-form-row">
+
+                        <!-- ACCOUNT TYPE -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <select
+                                    class="sp-field-select sp-form-fld-email"
+                                    (change)="onTypeChange($event.target.value)"
+                                    formControlName="type">
+                                    <option value="">-- Choose one --</option>
+                                    <option *ngFor="let e of accTypes" [value]="e._id">{{e.text}}</option>
+                                </select>
+                                <label class="sp-field-label">Account Type</label>
+                            </div>
+                        </div>
+
+                        <!-- <sp-field-select
+                            label="Type"
+                            className="sp-form-fld-email"
+                            ngModel name="acctype">
+                        </sp-field-select> -->
+                    </div>
+                    <div class="sp-form-row">
+
+                        <!-- ACCOUNT SUBTYPE -->
+                        <div class="sp-field-wrapper">
+                            <div class="sp-field-content">
+                                <select
+                                    class="sp-field-select sp-form-fld-email"
+                                    formControlName="subtype">
+                                    <option value="">-- Choose one --</option>
+                                    <option *ngFor="let e of accSubTypes" [value]="e._id">{{e.text}}</option>
+                                </select>
+                                <label class="sp-field-label">Account Sub-Type</label>
+                            </div>
+                        </div>
+
+                        <!-- <sp-field-text
+                            label="Opening Balance"
+                            className="sp-form-fld-phone"
+                            ngModel name="balance">
+                        </sp-field-text> -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</form>

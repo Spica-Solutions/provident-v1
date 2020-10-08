@@ -1,0 +1,158 @@
+<div class="sp-page-container">
+    <div class="sp-card">
+        <div class="sp-card-banner">
+            <div class="sp-card-banner-header">
+                <i class="material-icons banner-icon">cloud_upload</i>
+                <div class="sp-card-banner-title">
+                    <div class="sp-card-banner-label">Loans</div>
+                    <div class="sp-card-banner-text">Import Remittance File</div>
+                </div>
+            </div>
+            <div class="sp-card-banner-actions">
+                <button type="button" class="sp-card-banner-action-btn fw500"
+                    (click)="gotoList()">Go to Loans</button>
+                <button type="button" class="sp-card-banner-action-btn fw500"
+                    (click)="gotoHistory()">Import History</button>
+            </div>
+        </div>
+        <div class="sp-card-padding">
+            <div class="sp-card-flow-down">
+                <div class="sp-fld">
+                    <div class="sp-fld-label">Remittance file</div>
+                    <div>
+                        <input type="file" class="sp-fld-text-input sp-fld-email">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="sp-card-header-btn-def">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sp-card sp-card-padding">
+        <div class="sp-card-header">
+            <div>
+                <!-- <i class="material-icons card-icon card-icon-orange">request_page</i> -->
+                <span class="fw700">IMPORT PREVIEW</span>
+            </div>
+            <button type="button" class="sp-card-header-btn-def">Import Employees</button>
+        </div>
+        <div class="sp-card-content">
+            <table class="sp-list">
+                <thead>
+                    <tr>
+                        <th>Member Name</th>
+                        <th>Remitted Amount</th>
+                        <th>Loans</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sp-list-txt-col">Villarama, Violeta</td>
+                        <td class="sp-list-txt-col">6,000.00</td>
+                        <td class="sp-list-txt-col">5</td>
+                        <td class="sp-list-edit-col">
+                            <button type="button" class="sp-list-row-btn-def"
+                                (click)="expand(123)">Expand</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="sp-list-detail-line">
+                            <table class="sp-list-detail-table">
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Regular Loan</td>
+                                    <td>Aug 2020</td>
+                                    <td class="number strike">1,250.00</td>
+                                    <td class="number">0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Regular Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number strike">2,500.00</td>
+                                    <td class="number">0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Calamity Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number strike">1,500.00</td>
+                                    <td class="number">0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Emergency Loan</td>
+                                    <td>Aug 2020</td>
+                                    <td class="number strike">500.00</td>
+                                    <td class="number">0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Emergency Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number strike">500.00</td>
+                                    <td class="number balance">250.00</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="even">
+                        <td class="sp-list-txt-col">Villarama, Marielle</td>
+                        <td class="sp-list-txt-col">5,000.00</td>
+                        <td class="sp-list-txt-col">1</td>
+                        <td class="sp-list-edit-col">
+                            <button type="button" class="sp-list-row-btn-def"
+                                (click)="expand(123)">Expand</button>
+                        </td>
+                    </tr>
+                    <tr class="even">
+                        <td colspan="5" class="sp-list-detail-line">
+                            <table class="sp-list-detail-table">
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Regular Loan</td>
+                                    <td>Aug 2020</td>
+                                    <td class="number strike">5,000.00</td>
+                                    <td class="number">0.00</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sp-list-txt-col">Villarama, Marlene</td>
+                        <td class="sp-list-txt-col">4,000.00</td>
+                        <td class="sp-list-txt-col">2</td>
+                        <td class="sp-list-edit-col">
+                            <button type="button" class="sp-list-row-btn-def"
+                                (click)="expand(123)">Expand</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="sp-list-detail-line">
+                            <table class="sp-list-detail-table">
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Regular Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number strike">5,000.00</td>
+                                    <td class="number balance">1,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="sp-list-detail-link">Loan #123</a></td>
+                                    <td class="desc">Emergency Loan</td>
+                                    <td>Sep 2020</td>
+                                    <td class="number">3,000.00</td>
+                                    <td class="number"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

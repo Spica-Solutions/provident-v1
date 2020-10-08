@@ -1,0 +1,72 @@
+<div class="sp-page-container">
+    <div class="sp-card">
+        <div class="sp-card-banner">
+            <div class="sp-card-banner-header">
+                <i class="material-icons banner-icon">cloud_upload</i>
+                <div class="sp-card-banner-title">
+                    <div class="sp-card-banner-label">Members > Import</div>
+                    <div class="sp-card-banner-text">Import Member File</div>
+                </div>
+            </div>
+            <div class="sp-card-banner-actions">
+                <button type="button" class="sp-card-banner-action-btn fw500"
+                    (click)="gotoList()">Go to Member List</button>
+                <button type="button" class="sp-card-banner-action-btn fw500"
+                    (click)="gotoHistory()">Import History</button>
+            </div>
+        </div>
+        <div class="sp-card-padding">
+            <div class="sp-card-flow-down">
+                <div class="sp-fld">
+                    <div class="sp-fld-label">Member file</div>
+                    <div>
+                        <input type="file" class="sp-fld-text-input sp-fld-email">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="sp-card-header-btn-def">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sp-card sp-card-padding">
+        <div class="sp-card-header">
+            <div>
+                <!-- <i class="material-icons card-icon card-icon-orange">request_page</i> -->
+                <span class="fw700">IMPORT PREVIEW</span>
+            </div>
+            <button type="button" class="sp-card-header-btn-def">Import Employees</button>
+        </div>
+        <div class="sp-card-content">
+            <table class="sp-list">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Employee ID</th>
+                        <th>Office</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sp-list-txt-col">Linson, Apple</td>
+                        <td class="sp-list-txt-col">Customer Service Manager</td>
+                        <td class="sp-list-txt-col">Central Office : OAAFA</td>
+                        <td class="sp-list-txt-col">apple.linson02@gmail.com</td>
+                        <td class="sp-list-txt-col">0917-709-9588</td>
+                    </tr>
+                    <tr class="even">
+                        <td class="sp-list-txt-col">Villarama, Violy</td>
+                        <td class="sp-list-txt-col">Division Chief</td>
+                        <td class="sp-list-txt-col">Central Office : ODAMO</td>
+                        <td class="sp-list-txt-col">violy_villarama@yahoo.com</td>
+                        <td class="sp-list-txt-col">0928-410-2732</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

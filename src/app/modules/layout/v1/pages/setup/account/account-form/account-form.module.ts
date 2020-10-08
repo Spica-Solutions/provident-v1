@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AccountFormRoutingModule } from './account-form-routing.module';
 import { AccountFormComponent } from './account-form.component';
@@ -12,6 +13,7 @@ import { FieldSelectModule } from '../../../../shared/form/field-select/field-se
     imports: [
         CommonModule,
         AccountFormRoutingModule,
+        ReactiveFormsModule,
 
         FieldTextModule,
         FieldSelectModule

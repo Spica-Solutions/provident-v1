@@ -71,3 +71,7 @@
 .sp-table-detail-strike {
     text-decoration: line-through;
 }
+.child-row {
+    /* color: #FF0000; */
+    padding-left: 48px !important;
+}

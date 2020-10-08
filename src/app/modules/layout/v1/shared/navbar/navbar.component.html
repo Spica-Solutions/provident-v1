@@ -5,7 +5,7 @@
                 <span>Home</span>
             </a>
         </li>
-        <li>
+        <li *ngIf="permissions['member_menu'] == true">
             <a title="Members" [routerLink]="['member']" class="sp-navbar-link" routerLinkActive="active">
                 <!-- <i class="material-icons">calendar_today</i> -->
                 <span>Members</span>
@@ -16,9 +16,10 @@
                 <li><a title="New" [routerLink]="['member/new']">New</a></li>
                 <li><div class="sp-navbar-menu-sep"></div></li>
                 <li><a title="Import" [routerLink]="['member/import']">Import</a></li>
+                <li><a title="Member Portal" [routerLink]="['/portal']">Member Portal Sample</a></li>
             </ul>
         </li>
-        <li>
+        <li *ngIf="permissions['loan_menu'] == true">
             <a title="Loan" [routerLink]="['transaction/loan/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
                 <span>Loans</span>
             </a>
@@ -29,7 +30,7 @@
                 <li><a title="Loans" [routerLink]="['transaction/task/remittance']">Import Remittance File</a></li>
             </ul>
         </li>
-        <li>
+        <li *ngIf="permissions['report_menu'] == true">
             <a title="Reports" [routerLink]="['report']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
                 <span>Reports</span>
                 <!-- <i class="material-icons btn-icon">cached</i> -->
@@ -46,7 +47,7 @@
                 <li><a title="Search" [routerLink]="['report/trialbalance']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Petty Cash Voucher</a></li>
             </ul>
         </li>
-        <li>
+        <li *ngIf="permissions['setup_menu'] == true">
             <a title="Setup" [routerLink]="['setup']" class="sp-navbar-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
                 <!-- <i class="material-icons btn-icon">settings</i> -->
                 <span>Setup</span>
@@ -54,7 +55,7 @@
             <ul>
                 <li><a title="Accounts" [routerLink]="['setup/account']" class="sp-navbar-link">Accounts</a></li>
                 <li><a title="Accounts" [routerLink]="['setup/loc']" class="sp-navbar-link">Locations</a></li>
-                <li><a title="Accounts" [routerLink]="['setup/dept']" class="sp-navbar-link">Offices</a></li>
+                <!-- <li><a title="Accounts" [routerLink]="['setup/dept']" class="sp-navbar-link">Offices</a></li> -->
                 <li><a title="Accounts" [routerLink]="['setup/user']" class="sp-navbar-link">Users</a></li>
                 <li><a title="Accounts" [routerLink]="['setup/role']" class="sp-navbar-link">Roles</a></li>
                 <li><div class="sp-navbar-menu-sep"></div></li>

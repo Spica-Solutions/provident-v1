@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, Subject, Subscription } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -19,6 +19,9 @@ export class SpUiService {
     activeTab: string = "";
     activeTabChanged: Subject<string> = new Subject<string>();
     tabsTouched: string[] = [];
+
+    urlSub: Subscription;
+    paramsSub: Subscription;
   
     constructor(
         private router: Router
@@ -92,4 +95,31 @@ export class SpUiService {
         return this.activeTabChanged.asObservable();
     }
     // Record Type - END
+
+    // Miscellaneous
+    formatDate(str): string {
+        const dt = new Date(str);
+        return `${(dt.getMonth()+1).toString()}/${dt.getDate()}/${dt.getFullYear()}`;
+    }
+
+    parseRouteData(route: ActivatedRoute): void {
+        this.paramsSub = route.queryParams.subscribe(p => {
+            this.recordId = p['id'] || '';
+            if (this.recordId) {
+                this.recordId = this.recordId.trim();
+            }
+            console.log(`rid: '${this.recordId}'`);
+        });
+        this.urlSub = route.parent.url.subscribe(u => {
+            console.log({ u });
+            this.recordType = u[u.length - 1].path;
+            console.log(`rtype: ${this.recordType}`);
+        });
+        console.log({ rid: this.recordId, rtype: this.recordType });
+    }
+
+    destroyRouteSubs(): void {
+        this.paramsSub.unsubscribe();
+        this.urlSub.unsubscribe();
+    }
 }

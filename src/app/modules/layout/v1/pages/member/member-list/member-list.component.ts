@@ -13,11 +13,13 @@ import { map } from 'rxjs/operators';
         './member-list.component.css',
         '../../../styles/pages.css',
         '../../../styles/forms.css',
+        '../../../styles/fields.css',
         '../../../styles/tables.css'
     ]
 })
 export class MemberListComponent implements OnInit {
 
+    submitting: boolean = false;
     members = [];
     subMembers: Subscription;
 

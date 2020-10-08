@@ -1,0 +1,65 @@
+<div class="sp-page-container">
+    
+    <!-- USER BANNER -->
+    <div class="sp-card">
+        <div class="sp-card-banner">
+            <div class="sp-card-banner-header">
+                <i class="material-icons banner-icon">account_circle</i>
+                <div class="sp-card-banner-title">
+                    <div class="sp-card-banner-label">User</div>
+                    <div class="sp-card-banner-text">Villarama, Marlon Sanguir</div>
+                </div>
+            </div>
+            <div class="sp-card-banner-actions">
+                <button type="button" class="sp-card-banner-action-btn fw500"
+                    (click)="gotoList()">Go to List</button>
+            </div>
+        </div>
+
+        <div class="sp-card-padding">
+            <div class="sp-card-flow-down">
+                <div class="sp-card-col-2">
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">First Name</div>
+                        <div>
+                            <input type="text" class="sp-fld-text-input sp-fld-name">
+                        </div>
+                    </div>
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Last Name</div>
+                        <div>
+                            <input type="text" class="sp-fld-text-input sp-fld-name">
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-card-col-2">
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Email Address</div>
+                        <div>
+                            <input type="text" class="sp-fld-text-input sp-fld-email">
+                        </div>
+                    </div>
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Mobile Phone</div>
+                        <div>
+                            <input type="text" class="sp-fld-text-input sp-fld-phone">
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-card-col-2">
+                    <div class="sp-fld">
+                        <input type="checkbox" class="sp-fld-text-cb"> <label>Active</label>
+                    </div>
+                    <div>
+                        <button type="button" class="sp-card-header-btn-def"
+                            (click)="submitForm()">Save changes</button>
+                        <!-- <button type="button" class="sp-card-header-btn"
+                            (click)="preview()">Preview payment schedule</button> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

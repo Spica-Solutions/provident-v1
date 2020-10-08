@@ -28,6 +28,14 @@ export class SpApiService {
         return this.fetchDoneChange.asObservable();
     }
 
+    public getGlobalsFromDb(): Observable<any> {
+        let query = this.initQuery(true);
+        const url = `${this.API_URL}/find?t=lists&${query.join('&')}`;
+        console.log(`+++getGlobalsFromDb url: ${url}`);
+
+        return this.http.get(url);
+    }
+
     public find(type: string, locationSpecific: boolean, filters?: object): Observable<any> {
         let query = this.initQuery(locationSpecific);
 
@@ -39,40 +47,23 @@ export class SpApiService {
             }
         }
 
-        const url = `${this.API_URL}/members/find?${query.join('&')}`;
-        console.log(`find url: ${url}`);
+        const url = `${this.API_URL}/find?t=${type}&${query.join('&')}`;
+        console.log(`+++ find url: ${url}`);
         return this.http.get(url);
     }
 
     public get(type: string, id: string) {
-        const url = `${this.API_URL}/${type}/${id}`;
-        console.log(`get: ${url}`);
+        const url = `${this.API_URL}/get?t=${type}&id=${id}`;
+        console.log(`+++ get url: ${url}`);
 
-        // this.setFetchDone(false);
         return this.http.get(url);
-        // fetch(url)
-        //     .then(res => {
-        //         console.log(res);
-        //         if(res.status !== 200) {
-        //             console.log(res);
-        //             return;
-        //         }
-
-        //         res.json().then(d => {
-        //             console.log(d);
-        //             this.svcMeta.setMember(res);
-        //         })
-        //     })
-        //     .catch(err => {
-        //         console.log(err);
-        //     })
-        //     .finally(() => this.setFetchDone(true));
     }
 
-    public update(rtype: string, op: string, obj: any, id:string) {
-        const url = `${this.API_URL}/${rtype}/${op}?id=${id}`;
-        console.log(`update url: ${url}`);
-        console.log(obj);
+    public update(rtype: string, op: string, obj: any, id?:string) {
+        const idParam = op == 'create' ? '' : `?id=${id}`;
+        const url = `${this.API_URL}/${rtype}/${op}${idParam}`;
+        console.log(`+++update url: ${url}`);
+        // console.log(obj);
         return this.http.post(url, obj);
     }
 

@@ -13,82 +13,23 @@
         <table class="sp-table sp-table-actionable">
             <thead>
                 <tr>
-                    <th>Number</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Balance</th>
+                    <th>Account Name</th>
+                    <th>Code</th>
+                    <th>Group</th>
+                    <th>Sub-Group</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1000</td>
-                    <td>Cash</td>
-                    <td>Bank</td>
-                    <td>66,000.00</td>
+                <tr *ngFor="let acc of accounts; let i = index" [ngClass]="{'even': i%2 > 0}">
+                    <td>{{ acc.name | titlecase }}</td>
+                    <td>{{ acc.code }}</td>
+                    <td>{{ acc.group }}</td>
+                    <td>{{ acc.subgroup }}</td>
                     <td>
                         <button type="button"
                             class="btn-action"
-                            (click)="gotoEdit(456)">View</button>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoRegister(456)">Register</button>
-                    </td>
-                </tr>
-                <tr class="even">
-                    <td>1011</td>
-                    <td>Checking - BDO</td>
-                    <td>Bank</td>
-                    <td>397,389.00</td>
-                    <td>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoEdit(456)">View</button>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoRegister(456)">Register</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1150</td>
-                    <td>Accounts Receivable</td>
-                    <td>Accounts Receivable</td>
-                    <td>5,100.00</td>
-                    <td>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoEdit(456)">View</button>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoRegister(456)">Register</button>
-                    </td>
-                </tr>
-                <tr class="even">
-                    <td>1300</td>
-                    <td>Prepaid Expenses</td>
-                    <td>Expense</td>
-                    <td>2,916.00</td>
-                    <td>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoEdit(456)">View</button>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoRegister(456)">Register</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2100</td>
-                    <td>Payroll Accruals</td>
-                    <td>Other Current Liability</td>
-                    <td>1,761,850.58</td>
-                    <td>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoEdit(456)">View</button>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="gotoRegister(456)">Register</button>
+                            (click)="gotoEdit(acc._id)">View</button>
                     </td>
                 </tr>
             </tbody>

@@ -1,0 +1,243 @@
+<div class="sp-page-container">
+    <div class="sp-card">
+
+        <div class="sp-card-banner">
+            <div class="sp-card-banner-header">
+                <i class="material-icons banner-icon">monetization_on</i>
+                <div class="sp-card-banner-title">
+                    <div class="sp-card-banner-label">LOANS</div>
+                    <div class="sp-card-banner-text">Loan #123456</div>
+                </div>
+            </div>
+            <div class="sp-card-banner-actions">
+                <button type="button" class="sp-card-banner-action-btn fw500"
+                    (click)="gotoList()">Go to List</button>
+            </div>
+        </div>
+
+        <div class="sp-card-padding">
+            <div class="sp-card-flow-down">
+                <div class="sp-card-col-2">
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Member Name</div>
+                        <div class="sp-fld-banner-text fw700">
+                            Villarama, Marlon Sanguir
+                            <button type="button" class="sp-card-header-btn"
+                                (click)="gotoMember()">View</button>
+                        </div>
+                    </div>
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Employee ID</div>
+                        <div class="sp-fld-banner-text fw700">987654</div>
+                    </div>
+                </div>
+                <div class="sp-card-col-2">
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Loan Type</div>
+                        <div>
+                            <select class="sp-fld-select sp-fld-name">
+                                <option>--</option>
+                                <option>Regular</option>
+                                <option>Emergency</option>
+                                <option>Calamity</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Amount</div>
+                        <div>
+                            <input type="text" class="sp-fld-text-input sp-fld-phone">
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-card-col-2">
+                    <div class="sp-fld">
+                        <div class="sp-fld-label">Terms</div>
+                        <div>
+                            <select class="sp-fld-select sp-fld-name">
+                                <option>--</option>
+                                <option>12 months</option>
+                                <option>24 months</option>
+                                <option>36 months</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" class="sp-card-header-btn-def"
+                            (click)="submitLoan()">Submit application</button>
+                        <button type="button" class="sp-card-header-btn"
+                            (click)="preview()">Preview payment schedule</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="sp-page-dash-left">
+
+        <!-- PAYMENT SCHEDULE -->
+        <div class="sp-page-dash-col">
+            <div class="sp-card sp-card-padding">
+                <div class="sp-card-header">
+                    <div>
+                        <!-- <i class="material-icons card-icon card-icon-orange">request_page</i> -->
+                        <span class="fw700">PAYMENT SCHEDULE</span>
+                    </div>
+                    <!-- <button type="button" class="sp-card-header-btn">Apply for Loan</button> -->
+                </div>
+                <div class="sp-card-content">
+                    <table class="sp-list">
+                        <thead>
+                            <tr>
+                                <th>Month/Year</th>
+                                <th>Amount Due</th>
+                                <th>Remit Amount</th>
+                                <th>Remit Date</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sp-list-txt-col">September 2020</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">Sep 12, 2020</td>
+                                <td class="sp-list-txt-col">11,000.00</td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">October 2020</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">November 2020</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">December 2020</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">January 2021</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">February 2021</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">March 2021</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">April 2021</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">May 2021</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">June 2021</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">July 2021</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">August 2021</td>
+                                <td class="sp-list-txt-col">1,000.00</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- APPROVAL HISTORY -->
+        <div class="sp-page-dash-col">
+            <div class="sp-card sp-card-padding">
+                <div class="sp-card-header">
+                    <div>
+                        <!-- <i class="material-icons card-icon card-icon-orange">request_page</i> -->
+                        <span class="fw700">APPROVAL HISTORY</span>
+                    </div>
+                    <!-- <button type="button" class="sp-card-header-btn">Apply for Loan</button> -->
+                </div>
+                <div class="sp-card-content">
+                    <table class="sp-list">
+                        <thead>
+                            <tr>
+                                <th>Approver</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sp-list-txt-col">Checker</td>
+                                <td class="sp-list-txt-col">Aproved</td>
+                                <td class="sp-list-txt-col">Sep 12, 2020</td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">Endorser</td>
+                                <td class="sp-list-txt-col">Approved</td>
+                                <td class="sp-list-txt-col">Sep 14, 2020</td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">Manager</td>
+                                <td class="sp-list-txt-col">Pending Approval</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sp-list-txt-col">Controller</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                            <tr>
+                                <td class="sp-list-txt-col">Releasing</td>
+                                <td class="sp-list-txt-col">--</td>
+                                <td class="sp-list-txt-col">--</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

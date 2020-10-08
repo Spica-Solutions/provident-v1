@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { V1ListResolver } from '../../resolvers/v1-list.resolver';
 import { SetupComponent } from './setup.component';
 
 const routes: Routes = [
@@ -8,7 +9,12 @@ const routes: Routes = [
         component: SetupComponent,
         children: [
             { path: 'account', loadChildren: async () => (await import('./account/account.module')).AccountModule },
-            { path: 'loc', loadChildren: async () => (await import('./locations/locations.module')).LocationsModule },
+            {
+                path: 'loc',
+                loadChildren: async () => (await import('./locations/locations.module')).LocationsModule,
+                resolve: { list: V1ListResolver },
+                data: { listtype: 'locations' }
+            },
             { path: 'dept', loadChildren: async () => (await import('./departments/departments.module')).DepartmentsModule },
             { path: 'user', loadChildren: async () => (await import('./users/users.module')).UsersModule },
             { path: 'role', loadChildren: async () => (await import('./roles/roles.module')).RolesModule },

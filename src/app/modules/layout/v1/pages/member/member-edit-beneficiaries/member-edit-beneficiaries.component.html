@@ -11,41 +11,71 @@
         </div>
     </div>
     <div class="sp-subtab-header-form" *ngIf="showBenForm == true">
-        <div class="sp-form-row">
-            <sp-field-text
-                label="First Name"
-                className="sp-form-fld-name"
-                ngModel name="firstname">
-            </sp-field-text>
-            <sp-field-text
-                label="Last Name"
-                className="sp-form-fld-name"
-                ngModel name="lastname">
-            </sp-field-text>
-            <sp-field-text
-                label="Birth Date"
-                className="sp-form-fld-date"
-                ngModel name="dob">
-            </sp-field-text>
-            <sp-field-select
-                label="Relationship"
-                type="relationship"
-                className="sp-form-fld-name"
-                ngModel name="rel">
-            </sp-field-select>
-        </div>
-        <div class="sp-form-row">
-            <button type="button"
-                class="sp-form-btn-def"
-                (click)="toggleBenForm(false)">
-                <span>Create Beneficiary</span>
-            </button>
-            <button type="button"
-                class="sp-form-btn"
-                (click)="toggleBenForm(false)">
-                <span>Cancel</span>
-            </button>
-        </div>
+        <form [formGroup]="benForm">
+            <div class="sp-form-row">
+
+                <!-- FIRST NAME -->
+                <div class="sp-field-wrapper">
+                    <div class="sp-field-content">
+                        <input
+                            class="sp-field-text sp-form-fld-name"
+                            type="text"
+                            maxlength="40"
+                            required
+                            formControlName="firstname">
+                        <label class="sp-field-label">First Name</label>
+                    </div>
+                    <div class="sp-field-sub">
+                        <span class="sp-field-hint">Required (Max. 40 characters)</span>
+                    </div>
+                </div>
+
+                <!-- LAST NAME -->
+                <div class="sp-field-wrapper">
+                    <div class="sp-field-content">
+                        <input
+                            class="sp-field-text sp-form-fld-name"
+                            type="text"
+                            maxlength="40"
+                            formControlName="lastname">
+                        <label class="sp-field-label">Last Name</label>
+                    </div>
+                    <div class="sp-field-sub">
+                        <span class="sp-field-hint">Required (Max. 40 characters)</span>
+                    </div>
+                </div>
+
+                <!-- DATE OF BIRTH -->
+                <div class="sp-field-wrapper">
+                    <div class="sp-field-content">
+                        <input
+                            class="sp-field-text sp-form-fld-date"
+                            type="text"
+                            formControlName="dob">
+                        <label class="sp-field-label">Date of Birth</label>
+                        <button type="button" class="sp-field-text-btn">
+                            <i class="material-icons">calendar_today</i>
+                        </button>
+                    </div>
+                    <div class="sp-field-sub">
+                        <span class="sp-field-hint">&nbsp;</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="sp-form-row">
+                <button type="button"
+                    class="sp-form-btn-def"
+                    (click)="createBen()">
+                    <span>Create Beneficiary</span>
+                </button>
+                <button type="button"
+                    class="sp-form-btn"
+                    (click)="cancelForm()">
+                    <span>Cancel</span>
+                </button>
+            </div>
+        </form>
     </div>
     <div class="sp-subtab-content">
         <table class="sp-table sp-table-actionable">
@@ -58,21 +88,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Villarama, Marlon</td>
-                    <td>Jul 7, 1978</td>
-                    <td>favorite</td>
+                <tr *ngFor="let ben of benefs; let i = index" [ngClass]="{'even': i % 2 > 0}">
+                    <td>{{ ben.name }}</td>
+                    <td>{{ ben.dob }}</td>
+                    <td>{{ ben.rel }}</td>
                     <td>
-                        <button type="button" class="btn-action">Edit</button>
-                        <button type="button" class="btn-action">Delete</button>
-                    </td>
-                </tr>
-                <tr class="even">
-                    <td>Villarama, Marielle</td>
-                    <td>Sep 23, 1998</td>
-                    <td>epal</td>
-                    <td>
-                        <button type="button" class="btn-action">Edit</button>
+                        <button type="button" class="btn-action" (click)="editBen(ben.id)">Edit</button>
                         <button type="button" class="btn-action">Delete</button>
                     </td>
                 </tr>

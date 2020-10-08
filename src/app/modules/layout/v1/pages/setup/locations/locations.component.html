@@ -5,82 +5,78 @@
         </div>
         <div>
             <button type="button" class="sp-form-btn-def"
-                (click)="toggleEditForm(true)">Add Location</button>
+                *ngIf="showEditForm == false"
+                (click)="createLoc()">Add Location</button>
         </div>
     </div>
 
-    <div class="sp-subtab-header-form" *ngIf="showEditForm == true">
-        <div class="sp-form-row">
-            <sp-field-text
-                label="Location Name"
-                className="sp-form-fld-email"
-                ngModel name="name">
-            </sp-field-text>
-            <sp-field-checkbox
-                label="Active">
-            </sp-field-checkbox>
+    <form [formGroup]="editForm">
+        <div class="sp-subtab-header-form" *ngIf="showEditForm == true">
+            <div class="sp-form-row">
+
+                <!-- LOCATION NAME -->
+                <div class="sp-field-wrapper">
+                    <div class="sp-field-content">
+                        <input
+                            class="sp-field-text sp-form-fld-email"
+                            type="text"
+                            formControlName="text">
+                        <label class="sp-field-label">Location Name</label>
+                    </div>
+                </div>
+    
+                <!-- IS ACTIVE -->
+                <div class="sp-field-wrapper">
+                    <div class="sp-field-content">
+                        <label class="sp-field-cb-container">
+                            <span class="sp-field-cb-label">Is Active</span>
+                            <input
+                                class="sp-field-cb"
+                                type="checkbox"
+                                formControlName="isactive">
+                            <span class="sp-field-cb-check"></span>
+                        </label>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="sp-form-row" *ngIf="submitting == false">
+                <button type="button"
+                    class="sp-form-btn-def"
+                    (click)="submitLoc()">
+                    <span>Save Location</span>
+                </button>
+                <button type="button"
+                    class="sp-form-btn"
+                    (click)="toggleEditForm(false)">
+                    <span>Cancel</span>
+                </button>
+            </div>
+            <div class="sp-form-row" *ngIf="submitting == true">
+                <span>Submitting...</span>
+            </div>
         </div>
-        <div class="sp-form-row">
-            <button type="button"
-                class="sp-form-btn-def"
-                (click)="toggleEditForm(false)">
-                <span>Create Location</span>
-            </button>
-            <button type="button"
-                class="sp-form-btn"
-                (click)="toggleEditForm(false)">
-                <span>Cancel</span>
-            </button>
-        </div>
-    </div>
+    </form>
 
     <div class="sp-page-content-list">
         <table class="sp-table sp-table-actionable">
             <thead>
                 <tr>
                     <th>Location</th>
+                    <!-- <th>Is Active</th> -->
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Central Office</td>
+                <tr *ngFor="let e of locations; let i = index" [ngClass]="{'even': i % 2 > 0}">
+                    <td [ngClass]="{'child-row': e.child == true}">{{e.name}}</td>
                     <td>
                         <button type="button"
                             class="btn-action"
-                            (click)="editLoc(456)">Edit</button>
-                    </td>
-                </tr>
-                <tr class="even">
-                    <td>Region I - Ilocos</td>
-                    <td>
+                            (click)="editLoc(e.order)">Edit</button>
                         <button type="button"
                             class="btn-action"
-                            (click)="editLoc(456)">Edit</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Region II - Cagayan Valley</td>
-                    <td>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="editLoc(456)">Edit</button>
-                    </td>
-                </tr>
-                <tr class="even">
-                    <td>Region III - Central Luzon</td>
-                    <td>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="editLoc(456)">Edit</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Region IV-A - CALABARZON</td>
-                    <td>
-                        <button type="button"
-                            class="btn-action"
-                            (click)="editLoc(456)">Edit</button>
+                            (click)="deleteLoc(e.order)">Delete</button>
                     </td>
                 </tr>
             </tbody>

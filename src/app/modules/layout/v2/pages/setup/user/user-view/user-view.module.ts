@@ -1,0 +1,18 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { UserViewRoutingModule } from './user-view-routing.module';
+import { UserViewComponent } from './user-view.component';
+
+
+@NgModule({
+    declarations: [UserViewComponent],
+    imports: [
+        CommonModule,
+        UserViewRoutingModule
+    ],
+    exports: [
+        UserViewComponent
+    ]
+})
+export class UserViewModule { }

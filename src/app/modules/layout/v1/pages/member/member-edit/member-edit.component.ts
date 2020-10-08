@@ -47,10 +47,10 @@ export class MemberEditComponent implements OnInit {
         })).subscribe((rec) => {
             console.log(rec);
             this.rec = rec;
-            this.membername = `Member #${rec.empid} - ${rec.lastname}, ${rec.firstname} ${rec.middlename[0]}`;
-            this.initFormValues();
+            this.membername = `Member #${rec.empid} - ${rec.lastname}, ${rec.firstname}`;
+            // this.initFormValues();
             
-            this.svcMeta.setMember(this.rec);
+            this.svcMeta.setActiveRecord(this.rec);
         });
         
         this.subUI = this.svcUI.onActiveTabChanged().subscribe((tab) => {

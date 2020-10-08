@@ -6,18 +6,64 @@ import { Observable, Subject } from 'rxjs';
 })
 export class SpMetadataService {
 
-    searchResults:any[] = [];
-    searchResultsChange: Subject<any[]> = new Subject<any[]>();
+    searchResults:object[] = [];
+    searchResultsChange: Subject<object[]> = new Subject<object[]>();
 
-    member:any;
-    memberChange: Subject<any> = new Subject<any>();
+    activeRecord:object;
+    activeRecordChange: Subject<object> = new Subject<object>();
 
+    globalData: object[] = [];
+
+    globalLists: object;
+
+    months: object[] = [
+        { name: 'January', shortname: 'Jan' },
+        { name: 'February', shortname: 'Feb' },
+        { name: 'March', shortname: 'Mar' },
+        { name: 'April', shortname: 'Apr' },
+        { name: 'May', shortname: 'May' },
+        { name: 'June', shortname: 'Jun' },
+        { name: 'July', shortname: 'Jul' },
+        { name: 'August', shortname: 'Aug' },
+        { name: 'September', shortname: 'Sep' },
+        { name: 'October', shortname: 'Oct' },
+        { name: 'November', shortname: 'Nov' },
+        { name: 'December', shortname: 'Dec' }
+    ];
+    
     constructor() { }
 
     public getUser() {
         return {
-            location: "222"
+            location: "5f74099793c120c47adcafa4"
         };
+    }
+
+    setGlobalData(obj) {
+        console.log('  >> setGlobalData()');
+        console.log({ obj });
+        this.globalData = obj;
+    }
+
+    /**
+     * Expected output:
+     *  [
+     *      { 'type_1': [{el1}, {el2}, ... ] },
+     *      { 'type_2': [{el1}, {el2}, ... ] },
+     *      ...
+     *  ]
+     */
+    getGlobalLists() {
+        this.globalLists = {};
+        for (let i=0, n=this.globalData.length; i<n; i++) {
+            const k = this.globalData[i]['type'];
+            if (this.globalLists.hasOwnProperty(k) == false) {
+                this.globalLists[k] = [];
+            }
+            this.globalLists[k].push(this.globalData[i]);
+        }
+
+        return this.globalLists;
     }
 
     setSearchResults(res) {
@@ -31,15 +77,15 @@ export class SpMetadataService {
         return this.searchResultsChange.asObservable();
     }
 
-    setMember(res) {
-        console.log('meta: setMember');
-        this.member = res;
-        console.log(this.member);
-        this.memberChange.next(this.member);
+    setActiveRecord(res) {
+        console.log('meta: setActiveRecord');
+        this.activeRecord = res;
+        console.log(this.activeRecord);
+        this.activeRecordChange.next(this.activeRecord);
     }
 
     onMemberChange(): Observable<any> {
-        return this.memberChange.asObservable();
+        return this.activeRecordChange.asObservable();
     }
 
     diffObjects(refObj, compObj): object {

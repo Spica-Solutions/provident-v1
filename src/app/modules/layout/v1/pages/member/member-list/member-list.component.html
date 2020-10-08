@@ -9,7 +9,38 @@
         </div>
     </div>
 
-    <!-- <div class="sp-page-header" *ngIf="fetchDone != true">
+    <div class="sp-form-row">
+        <span class="sp-form-status" *ngIf="submitting == true">Submitting...</span>
+        <div class="sp-field-wrapper">
+            <div class="sp-field-content">
+                <select
+                    class="sp-field-select sp-form-fld-email"
+                    formControlName="location">
+                    <!-- <option *ngFor="let e of globalLists['location']" [value]="e.order">{{e.text}}</option> -->
+                </select>
+                <label class="sp-field-label">Location</label>
+            </div>
+        </div>
+        <div class="sp-field-wrapper">
+            <div class="sp-field-content">
+                <select
+                    class="sp-field-select sp-form-fld-email"
+                    formControlName="office">
+                    <!-- <option *ngFor="let e of globalLists['location']" [value]="e.order">{{e.text}}</option> -->
+                </select>
+                <label class="sp-field-label">Office</label>
+            </div>
+        </div>
+        <button type="button"
+            *ngIf="submitting == false"
+            class="sp-form-btn-def">Filter</button>
+            <!-- (click)="onSubmit()">Submit Form</button> -->
+        <!-- <button type="button" class="sp-form-btn" (click)="memberForm.reset(memberForm.value)">Reset</button> -->
+        <!-- <button type="button" class="sp-form-btn"
+            *ngIf="rtype == 'new'"
+            (click)="gotoList()">Members List</button> -->
+    </div>
+        <!-- <div class="sp-page-header" *ngIf="fetchDone != true">
         <sp-progress-slider></sp-progress-slider>
     </div> -->
 
@@ -26,7 +57,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let member of members">
+                <tr *ngFor="let member of members; let i = index" [ngClass]="{'even': i % 2 > 0}">
                     <td>{{ member.lastname | titlecase }}, {{ member.firstname | titlecase }}</td>
                     <td>{{ member.title }}</td>
                     <td>{{ member.email }}</td>
